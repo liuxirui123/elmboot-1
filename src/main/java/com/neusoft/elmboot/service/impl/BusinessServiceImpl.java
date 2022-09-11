@@ -10,17 +10,17 @@ import java.util.List;
 
 @Service
 public class BusinessServiceImpl implements BusinessService {
-
-@Autowired
-private BusinessMapper businessMapper;
-
-@Override
-public List<Business> listBusinessByOrderTypeId(Integer orderTypeId) {
-	return businessMapper.listBusinessByOrderTypeId(orderTypeId);
-}
-
-@Override
-public Business getBusinessById(Integer businessId) {
-	return businessMapper.getBusinessById(businessId);
-}
+	
+	@Autowired
+	private BusinessMapper businessMapper;
+	
+	@Override
+	public List<Business> listBusinessByOrderTypeId(Integer orderTypeId) {
+		return businessMapper.listBusinessByOrderTypeId(orderTypeId);
+	}
+	
+	@Override
+	public Business getBusinessById(Integer businessId) {
+		return businessMapper.getBusinessById(businessId);
+	}
 }
