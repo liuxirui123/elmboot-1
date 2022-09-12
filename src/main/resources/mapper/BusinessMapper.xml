@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neusoft.elmboot.mapper.BusinessMapper">
+    <select id="listBusinessByOrderTypeId" parameterType="Integer">
+        select * from business
+        <where>
+            orderTypeId=#{orderTypeId}
+        </where>
+        order by businessId
+    </select>
+
+    <select id="getBusinessById" parameterType="Integer">
+        select * from business
+        <where>
+            businessId=#{businessId}"
+        </where>
+
+    </select>
+</mapper>

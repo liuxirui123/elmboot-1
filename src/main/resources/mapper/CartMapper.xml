@@ -39,4 +39,16 @@
         </where>
     </delete>
 
+    <insert id="saveCart" parameterType="Cart">
+        insert into cart values(null,#{foodId},#{businessId},#{userId},1)
+    </insert>
+
+    <update id="updateCart" parameterType="Cart">
+        update cart set quantity=#{quantity}
+        <where>
+            foodId=#{foodId} and
+            businessId=#{businessId} and
+            userId=#{userId}
+        </where>
+    </update>
 </mapper>

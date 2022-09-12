@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.neusoft.elmboot.mapper.OrdersMapper">
     <resultMap type="Orders" id="ordersResultMap">
         <id column="orderId" property="orderId"/>
@@ -13,10 +14,15 @@
         <association property="business" javaType="Business"
                      select="com.neusoft.elmboot.mapper.BusinessMapper.getBusinessById"
                      column="businessId"/>
-        <collection property="list" ofType="OrderDetailet"
-                    select="com.neusoft.elmboot.mapper.OrderDetailetMapper.listOrderDetailetByOrderId"
+        <collection property="list" ofType="OrderDetail"
+                    select="com.neusoft.elmboot.mapper.OrderDetailMapper.listOrderDetailByOrderId"
                     column="orderId"/>
     </resultMap>
+
+    <insert id="saveOrders" parameterType="Orders" useGeneratedKeys="true" keyProperty="orderId" keyColumn="orderId">
+        insert into orders
+        values(#{userId},#{businessId},#{orderDate},#{orderTotal},#{daId},0)
+    </insert>
 
     <select id="getOrdersById" parameterType="Integer" resultMap="ordersResultMap">
         select * from orders where orderId=#{orderId}

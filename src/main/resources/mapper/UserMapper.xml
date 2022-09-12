@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neusoft.elmboot.mapper.UserMapper">
+
+    <select id="getUserByIdBypass" parameterType="User">
+        select * from user
+        <where>
+            userId=#{userId} and password=#{password}
+        </where>
+    </select>
+
+    <select id="getUserById" parameterType="String">
+        select count(*) from user
+        <where>
+            userId=#{userId}
+        </where>
+    </select>
+
+    <insert id="saveUser" parameterType="User">
+        insert into user
+        values(#{userId},#{password},#{userName},#{userSex},null,1)
+    </insert>
+
+</mapper>
