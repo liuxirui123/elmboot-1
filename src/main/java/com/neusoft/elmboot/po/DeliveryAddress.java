@@ -8,6 +8,8 @@ public class DeliveryAddress {
 	private String address;
 	private String userId;
 	
+	private Position position;
+	
 	public Integer getDaId() {
 		return daId;
 	}

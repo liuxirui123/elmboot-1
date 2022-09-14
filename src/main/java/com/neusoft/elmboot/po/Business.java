@@ -14,6 +14,8 @@ public class Business {
 	private double deliveryPrice; //配送费
 	private String remarks;
 	
+	private Position position;
+	
 	public Business() {
 	
 	}

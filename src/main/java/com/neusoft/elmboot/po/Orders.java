@@ -16,6 +16,8 @@ public class Orders {
 	
 	private List<OrderDetail> list;//一对多：订单明细
 	
+	private Position position;
+	
 	public Orders() {
 	
 	}
