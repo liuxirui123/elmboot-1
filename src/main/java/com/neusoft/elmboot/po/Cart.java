@@ -13,12 +13,13 @@ public class Cart {
 	
 	private Business business;//多对一：所属商家
 	
-	public Cart() {
-	
+	public Cart(String userId) {
+		this.userId = userId;
+		
 	}
 	
 	public Cart(String userId, Integer businessId) {
-		this.userId = userId;
+		this(userId);
 		this.businessId = businessId;
 	}
 	
