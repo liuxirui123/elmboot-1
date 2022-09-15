@@ -20,10 +20,37 @@ public class Business {
 	
 	}
 	
+	@Override
+	public String toString() {
+		return "Business{" +
+				"businessId=" + businessId +
+				", businessName='" + businessName + '\'' +
+				", businessAddress='" + businessAddress + '\'' +
+				", businessExplain='" + businessExplain + '\'' +
+				", businessImg: 略"  +
+				", orderTypeId=" + orderTypeId +
+				", starPrice=" + starPrice +
+				", deliveryPrice=" + deliveryPrice +
+				", remarks='" + remarks + '\'' +
+				", position=" + position +
+				'}';
+	}
+	
 	public Business(Integer businessId) {
 		this.businessId = businessId;
 	}
 	
+	public void setBusinessId(Integer businessId) {
+		this.businessId = businessId;
+	}
+	
+	public Position getPosition() {
+		return position;
+	}
+	
+	public void setPosition(Position position) {
+		this.position = position;
+	}
 	
 	public Integer getBusinessId() {
 		return businessId;
