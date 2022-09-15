@@ -14,7 +14,6 @@ public class Business {
 	private double deliveryPrice; //配送费
 	private String remarks;
 	
-	private Position position;
 	
 	public Business() {
 	
@@ -32,7 +31,6 @@ public class Business {
 				", starPrice=" + starPrice +
 				", deliveryPrice=" + deliveryPrice +
 				", remarks='" + remarks + '\'' +
-				", position=" + position +
 				'}';
 	}
 	
@@ -42,14 +40,6 @@ public class Business {
 	
 	public void setBusinessId(Integer businessId) {
 		this.businessId = businessId;
-	}
-	
-	public Position getPosition() {
-		return position;
-	}
-	
-	public void setPosition(Position position) {
-		this.position = position;
 	}
 	
 	public Integer getBusinessId() {

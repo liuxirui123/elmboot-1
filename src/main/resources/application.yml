@@ -3,4 +3,4 @@ server:
   server.servlet.context-path=/elm
 
 mybatis:
-  config-locations: classpath:mybatis-config.xml
+  config-locations: mybatis-config.xml
