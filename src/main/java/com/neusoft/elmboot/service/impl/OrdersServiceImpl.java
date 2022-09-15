@@ -29,9 +29,7 @@ public class OrdersServiceImpl implements OrdersService {
 	@Transactional
 	public int createOrders(Orders orders) {
 		//1、查询当前用户购物车中当前商家的所有食品
-		Cart cart = new Cart();
-		cart.setUserId(orders.getUserId());
-		cart.setBusinessId(orders.getBusinessId());
+		Cart cart = new Cart(orders.getUserId(),orders.getBusinessId());
 		List<Cart> cartList = cartMapper.listCart(cart);
 		
 		
