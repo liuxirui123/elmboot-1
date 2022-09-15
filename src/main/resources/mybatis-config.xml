@@ -44,6 +44,12 @@
     <!-- 映射器 -->
     <mappers>
         <mapper resource="mapper/BusinessMapper.xml"/>
+        <mapper resource="mapper/CartMapper.xml"/>
+        <mapper resource="mapper/DeliveryAddressMapper.xml"/>
+        <mapper resource="mapper/FoodMapper.xml"/>
+        <mapper resource="mapper/OrderDetailMapper.xml"/>
+        <mapper resource="mapper/OrdersMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
 
     </mappers>
 
