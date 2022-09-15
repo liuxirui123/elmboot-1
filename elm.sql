@@ -127,7 +127,7 @@ CREATE TABLE `food` (
   `remarks` varchar(40) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`foodId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;x
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `food`
