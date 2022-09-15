@@ -11,10 +11,10 @@
         order by businessId
     </select>
 
-    <select id="getBusinessById" parameterType="Integer">
+    <select id="getBusinessById" parameterType="Integer" resultType="Business">
         select * from business
         <where>
-            businessId=#{businessId}"
+            businessId=#{businessId}
         </where>
 
     </select>

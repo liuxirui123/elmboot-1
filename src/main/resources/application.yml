@@ -1,0 +1,6 @@
+server:
+  server.port=8080
+  server.servlet.context-path=/elm
+
+mybatis:
+  config-locations: classpath:mybatis-config.xml

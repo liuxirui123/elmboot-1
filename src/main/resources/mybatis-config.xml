@@ -4,12 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties resource="jdbc.properties" />
+    <properties resource="db.properties"/>
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
 
     <!--  JavaBean类型自动映射扫描包配置 Java类型别名  -->
     <typeAliases>
+        <typeAlias alias="Integer" type="java.lang.Integer"/>
+        <typeAlias alias="Long" type="java.lang.Long"/>
+        <typeAlias alias="HashMap" type="java.util.HashMap"/>
+        <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap"/>
+        <typeAlias alias="ArrayList" type="java.util.ArrayList"/>
+        <typeAlias alias="LinkedList" type="java.util.LinkedList"/>
+
+        <typeAlias alias="Business" type="com.neusoft.elmboot.po.Business"/>
+        <typeAlias alias="User" type="com.neusoft.elmboot.po.User"/>
+
         <package name="com.neusoft.elmboot.po"/>
-        <!--<typeAlias alias="User" type="com.neusoft.elmboot.po.User" />-->
+
     </typeAliases>
 
     <environments default="development">
@@ -29,8 +43,9 @@
 
     <!-- 映射器 -->
     <mappers>
-        <mapper resource="classpath:mapper/*.xml"/>
+        <mapper resource="mapper/BusinessMapper.xml"/>
 
     </mappers>
+
 </configuration>
 
