@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.neusoft.elmboot.mapper.BusinessMapper">
-    <select id="listBusinessByOrderTypeId" parameterType="Integer">
+    <select id="listBusinessByOrderTypeId" parameterType="Integer" resultType="Business">
         select * from business
         <where>
             orderTypeId=#{orderTypeId}
