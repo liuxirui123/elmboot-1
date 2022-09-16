@@ -1,14 +1,13 @@
 package com.neusoft.elmboot.mapper;
 
-import com.neusoft.elmboot.DataConnection;
+import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.po.User;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class UserMapperTest {
-    DataConnection dataCon = new DataConnection();
-    SqlSession sqlSession = dataCon.getSqlSession();
+    SqlSession sqlSession = MyBatisUtil.getSqlSession();
     UserMapper uM = sqlSession.getMapper(UserMapper.class);
 
     @Test

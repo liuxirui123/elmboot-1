@@ -1,6 +1,6 @@
 package com.neusoft.elmboot.mapper;
 
-import com.neusoft.elmboot.DataConnection;
+import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.po.Business;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
@@ -9,8 +9,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class BusinessMapperTest {
-	DataConnection dataCon = new DataConnection();
-	SqlSession sqlSession = dataCon.getSqlSession();
+	SqlSession sqlSession = MyBatisUtil.getSqlSession();
 	BusinessMapper bM = sqlSession.getMapper(BusinessMapper.class);
 	
 	@Test
