@@ -40,7 +40,8 @@
     </delete>
 
     <insert id="saveCart" parameterType="Cart">
-        insert into cart values(null,#{foodId},#{businessId},#{userId},1)
+        insert into cart
+        values (null, #{foodId}, #{businessId}, #{userId}, 1)
     </insert>
 
     <update id="updateCart" parameterType="Cart">
