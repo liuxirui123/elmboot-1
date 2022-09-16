@@ -9,6 +9,19 @@ public class Food {
 	private Integer businessId;
 	private String remarks;
 	
+	@Override
+	public String toString() {
+		return "Food{" +
+				"foodId=" + foodId +
+				", foodName='" + foodName + '\'' +
+				", foodExplain='" + foodExplain + '\'' +
+				", foodImg: 略"  + '\'' +
+				", foodPrice=" + foodPrice +
+				", businessId=" + businessId +
+				", remarks='" + remarks + '\'' +
+				'}';
+	}
+	
 	public Integer getFoodId() {
 		return foodId;
 	}
