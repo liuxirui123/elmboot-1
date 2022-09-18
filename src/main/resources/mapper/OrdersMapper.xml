@@ -21,15 +21,20 @@
 
     <insert id="saveOrders" parameterType="Orders" useGeneratedKeys="true" keyProperty="orderId" keyColumn="orderId">
         insert into orders
-        values(#{userId},#{businessId},#{orderDate},#{orderTotal},#{daId},0)
+        values (null, #{userId}, #{businessId}, #{orderDate}, #{orderTotal}, #{daId}, 0)
     </insert>
 
     <select id="getOrdersById" parameterType="Integer" resultMap="ordersResultMap">
-        select * from orders where orderId=#{orderId}
+        select *
+        from orders
+        where orderId = #{orderId}
     </select>
 
     <select id="listOrdersByUserId" parameterType="String" resultMap="ordersResultMap">
-        select * from orders where userId=#{userId} order by orderId
+        select *
+        from orders
+        where userId = #{userId}
+        order by orderId
     </select>
 
 </mapper>
