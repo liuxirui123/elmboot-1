@@ -8,7 +8,13 @@ public class OrderDetail {
 	private Integer quantity;
 	
 	private Food food;     //多对一：所属食品
-	
+
+	public OrderDetail(Integer orderId, Integer foodId, Integer quantity) {
+		this.orderId = orderId;
+		this.foodId = foodId;
+		this.quantity = quantity;
+	}
+
 	public Integer getOdId() {
 		return odId;
 	}

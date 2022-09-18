@@ -22,7 +22,9 @@
 
     <select id="listOrderDetailByOrderId" parameterType="Integer"
             resultMap="orderDetailResultMap">
-        select * from orderDetail where orderId=#{orderId}
+        select *
+        from orderDetail
+        where orderId = #{orderId}
     </select>
 
 </mapper>
