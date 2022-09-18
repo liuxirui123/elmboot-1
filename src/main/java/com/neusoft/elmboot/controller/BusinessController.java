@@ -13,12 +13,16 @@ import java.util.List;
 public class BusinessController {
 
     @Autowired
-
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
     public List<Business> listBusinessByOrderTypeId(Business business) throws Exception {
         return businessService.listBusinessByOrderTypeId(business.getOrderTypeId());
+    }
+
+    @RequestMapping("/listBusiness")
+    public List<Business> listBusiness() {
+        return businessService.listBusinessByOrderTypeId(null);
     }
 
     @RequestMapping("/getBusinessById")

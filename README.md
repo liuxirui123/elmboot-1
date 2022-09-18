@@ -1,4 +1,14 @@
-##### elmboot
+# elmboot
+
+## elm_1.0(initial 版本介绍)
+
+## elm_1.1
+
+### Business
+
+#### listBusiness
+
+列举所有商家，通过BusinessId排序
 
 ## 待实现功能
 

@@ -6,7 +6,9 @@
     <select id="listBusinessByOrderTypeId" parameterType="Integer" resultType="Business">
         select * from business
         <where>
-            orderTypeId=#{orderTypeId}
+            <if test="orderTypeId !=null">
+                orderTypeId=#{orderTypeId}
+            </if>
         </where>
         order by businessId
     </select>

@@ -40,4 +40,12 @@ public class BusinessMapperTest {
         System.out.println(String.valueOf(bList.size()) + bList);
         Assert.assertEquals(0, bList.size());
     }
+
+    @Test
+    public void testListBusiness() {
+        List<Business> bList = bM.listBusinessByOrderTypeId(null);
+        System.out.println(String.valueOf(bList.size()) + bList);
+        Assert.assertTrue(bList.size() > 0);
+
+    }
 }
