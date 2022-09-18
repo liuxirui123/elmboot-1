@@ -7,12 +7,12 @@ import java.util.List;
 
 @Mapper
 public interface OrdersMapper {
-	
-	int saveOrders(Orders orders);
-	
-	//@Select("select * from orders where orderId=#{orderId}")
-	Orders getOrdersById(Integer orderId);
-	
-	//@Select("select * from orders where orderId=#{orderId} order by foodId")
-	List<Orders> listOrdersByUserId(String userId);
+
+    int saveOrders(Orders orders);
+
+    //@Select("select * from orders where orderId=#{orderId}")
+    Orders getOrdersById(Integer orderId);
+
+    //@Select("select * from orders where orderId=#{orderId} order by foodId")
+    List<Orders> listOrdersByUserId(String userId);
 }

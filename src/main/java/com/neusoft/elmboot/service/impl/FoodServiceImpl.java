@@ -10,12 +10,12 @@ import java.util.List;
 
 @Service
 public class FoodServiceImpl implements FoodService {
-	
-	@Autowired
-	private FoodMapper foodMapper;
-	
-	@Override
-	public List<Food> listFoodByBusinessId(Integer businessId) {
-		return foodMapper.listFoodByBusinessId(businessId);
-	}
+
+    @Autowired
+    private FoodMapper foodMapper;
+
+    @Override
+    public List<Food> listFoodByBusinessId(Integer businessId) {
+        return foodMapper.listFoodByBusinessId(businessId);
+    }
 }

@@ -5,5 +5,5 @@ import com.neusoft.elmboot.po.Food;
 import java.util.List;
 
 public interface FoodService {
-	public List<Food> listFoodByBusinessId(Integer businessId);
+    public List<Food> listFoodByBusinessId(Integer businessId);
 }

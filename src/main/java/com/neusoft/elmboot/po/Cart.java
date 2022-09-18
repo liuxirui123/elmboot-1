@@ -33,7 +33,7 @@ public class Cart {
         this.foodId = foodId;
     }
 
-    public Cart(String userId,Integer businessId, Integer foodId,  Integer quantity) {
+    public Cart(String userId, Integer businessId, Integer foodId, Integer quantity) {
         this(userId, businessId, foodId);
         this.quantity = quantity;
     }

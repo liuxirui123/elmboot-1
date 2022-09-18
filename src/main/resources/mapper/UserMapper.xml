@@ -4,14 +4,14 @@
 
 <mapper namespace="com.neusoft.elmboot.mapper.UserMapper">
 
-    <select id="getUserByIdBypass" parameterType="User">
+    <select id="getUserByIdByPass" parameterType="User" resultType="User">
         select * from user
         <where>
             userId=#{userId} and password=#{password}
         </where>
     </select>
 
-    <select id="getUserById" parameterType="String">
+    <select id="getUserById" parameterType="String" resultType="int">
         select count(*) from user
         <where>
             userId=#{userId}
@@ -20,7 +20,7 @@
 
     <insert id="saveUser" parameterType="User">
         insert into user
-        values(#{userId},#{password},#{userName},#{userSex},null,1)
+        values (#{userId}, #{password}, #{userName}, #{userSex}, null, 1)
     </insert>
 
 </mapper>

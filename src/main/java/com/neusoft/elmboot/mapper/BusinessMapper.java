@@ -7,8 +7,8 @@ import java.util.List;
 
 @Mapper
 public interface BusinessMapper {
-	
-	List<Business> listBusinessByOrderTypeId(Integer orderTypeId);
-	
-	Business getBusinessById(Integer businessId);
+
+    List<Business> listBusinessByOrderTypeId(Integer orderTypeId);
+
+    Business getBusinessById(Integer businessId);
 }

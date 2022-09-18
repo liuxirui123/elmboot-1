@@ -27,7 +27,7 @@ public class UserMapperTest {
 
     @Test
     public void testSaveUser() {
-        User u = new User("22345678910", "123", "林志玲",2);
+        User u = new User("22345678910", "123", "林志玲", 2);
 
         int result = uM.saveUser(u);
         Assert.assertTrue(result > 0);

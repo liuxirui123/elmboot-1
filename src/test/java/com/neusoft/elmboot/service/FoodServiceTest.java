@@ -8,12 +8,12 @@ import org.junit.Test;
 import java.util.List;
 
 public class FoodServiceTest {
-	FoodService fs = new FoodServiceImpl();
-	
-	@Test
-	public void testListFoodByBusinessId() {
-		List<Food> fList = fs.listFoodByBusinessId(10001);
-		Assert.assertNotNull(fList);
-		System.out.println(fList);
-	}
+    FoodService fs = new FoodServiceImpl();
+
+    @Test
+    public void testListFoodByBusinessId() {
+        List<Food> fList = fs.listFoodByBusinessId(10001);
+        Assert.assertNotNull(fList);
+        System.out.println(fList);
+    }
 }
