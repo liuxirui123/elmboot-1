@@ -14,7 +14,7 @@ public class CartMapperTest {
 
     @Test
     public void testListCart() {
-        Cart c = new Cart("11111111111", 10001, 2);
+        Cart c = new Cart(10001, 2, "11111111111");
         List<Cart> cList = cM.listCart(c);
         System.out.println(String.valueOf(cList.size()) + cList);
         Assert.assertTrue(cList.size() > 0);
@@ -22,15 +22,15 @@ public class CartMapperTest {
 
     @Test
     public void testRemoveCart() {
-        Cart c = new Cart("11111111111", 10001);
+        Cart c = new Cart(10001, "11111111111");
         Assert.assertEquals(1, cM.removeCart(c));
         sqlSession.rollback();
 
-        c = new Cart("11111111111", 10001, 2);
+        c = new Cart(10001, 2, "11111111111");
         Assert.assertEquals(1, cM.removeCart(c));
         sqlSession.rollback();
 
-        c = new Cart("test", 10001);
+        c = new Cart(10001, "test");
         Assert.assertEquals(0, cM.removeCart(c));
         sqlSession.rollback();
 
@@ -38,7 +38,7 @@ public class CartMapperTest {
 
     @Test
     public void testSaveCart() {
-        Cart c = new Cart("test", 10001, 1);
+        Cart c = new Cart(10001, 2, "11111111111");
         int result = cM.saveCart(c);
         System.out.println(result);
         Assert.assertTrue(result > 0);
@@ -47,11 +47,11 @@ public class CartMapperTest {
 
     @Test
     public void testUpdateCart() {
-        Cart c = new Cart("11111111111", 10001, 2, 2);
+        Cart c = new Cart(10001, 2, "11111111111", 2);
         Assert.assertEquals(1, cM.updateCart(c));
         sqlSession.rollback();
 
-        c = new Cart("test", 10001, 2, 2);
+        c = new Cart(10001, 2, "test", 2);
         Assert.assertEquals(0, cM.updateCart(c));
         sqlSession.rollback();
     }

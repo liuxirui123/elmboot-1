@@ -9,35 +9,6 @@ public class Cart {
     private String userId;
     private Integer quantity;
 
-    private Food food;//多对一：所属食品
-
-    private Business business;//多对一：所属商家
-
-
-    public Cart() {
-
-    }
-
-    public Cart(String userId) {
-        this.userId = userId;
-
-    }
-
-    public Cart(String userId, Integer businessId) {
-        this(userId);
-        this.businessId = businessId;
-    }
-
-    public Cart(String userId, Integer businessId, Integer foodId) {
-        this(userId, businessId);
-        this.foodId = foodId;
-    }
-
-    public Cart(String userId, Integer businessId, Integer foodId, Integer quantity) {
-        this(userId, businessId, foodId);
-        this.quantity = quantity;
-    }
-
     @Override
     public String toString() {
         return "Cart{" +
@@ -46,49 +17,46 @@ public class Cart {
                 ", businessId=" + businessId +
                 ", userId='" + userId + '\'' +
                 ", quantity=" + quantity +
-                ", food=" + food.toString() +
-                ", business=" + business.toString() +
                 '}';
     }
 
-    public void setCartId(Integer cartId) {
+    public Cart(Integer businessId, String userId) {
+        this.businessId = businessId;
+        this.userId = userId;
+    }
+
+    public Cart(Integer businessId, Integer foodId, String userId) {
+        this(businessId, userId);
+        this.foodId = foodId;
+    }
+
+    public Cart(Integer businessId, Integer foodId, String userId, Integer quantity) {
+        this(businessId, foodId, userId);
+        this.quantity = quantity;
+    }
+
+    public Cart(Integer cartId, Integer businessId, Integer foodId, String userId, Integer quantity) {
+        this(businessId, foodId, userId, quantity);
         this.cartId = cartId;
+    }
+
+    public Integer getCartId() {
+        return cartId;
     }
 
     public Integer getFoodId() {
         return foodId;
     }
 
-
     public Integer getBusinessId() {
         return businessId;
-    }
-
-    public void setBusinessId(Integer businessId) {
-        this.businessId = businessId;
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public Integer getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
-
-    public void setBusiness(Business business) {
-        this.business = business;
     }
 }
