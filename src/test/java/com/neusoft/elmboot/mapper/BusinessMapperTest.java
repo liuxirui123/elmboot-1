@@ -43,7 +43,7 @@ public class BusinessMapperTest {
 
     @Test
     public void testListBusiness() {
-        List<Business> bList = bM.listBusinessByOrderTypeId(null);
+        List<Business> bList = bM.listBusiness();
         System.out.println(String.valueOf(bList.size()) + bList);
         Assert.assertTrue(bList.size() > 0);
 

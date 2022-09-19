@@ -6,18 +6,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OrderDetailMapperTest {
     SqlSession sqlSession = MyBatisUtil.getSqlSession();
     OrderDetailMapper oDM = sqlSession.getMapper(OrderDetailMapper.class);
 
     @Test
     public void testSaveOrderDetailBatch() {
-        List<OrderDetail> odList = new ArrayList<>();
-        odList.add(new OrderDetail(1, 1, 1));
-        Assert.assertEquals(1, oDM.saveOrderDetailBatch(odList));
+        OrderDetail od = new OrderDetail(1, 1, 1);
+
+        Assert.assertEquals(1, oDM.saveOrderDetail(od));
 
         sqlSession.rollback();
     }

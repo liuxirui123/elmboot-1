@@ -4,18 +4,5 @@
 
 <mapper namespace="com.neusoft.elmboot.mapper.FoodMapper">
 
-    <select id="listFoodByBusinessId" parameterType="Integer" resultType="Food">
-        select * from food
-        <where>
-            businessId=#{businessId}
-        </where>
-        order by foodId
-    </select>
 
-    <select id="getFoodById" parameterType="Integer" resultType="Food">
-        select * from food
-        <where>
-            foodId=#{foodId}
-        </where>
-    </select>
 </mapper>

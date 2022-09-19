@@ -3,42 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.neusoft.elmboot.mapper.DeliveryAddressMapper">
-    <select id="listDeliveryAddressByUserId" parameterType="String" resultType="DeliveryAddress">
-        select * from deliveryAddress
-        <where>
-            userId=#{userId}
-        </where>
-        order by daId
 
-    </select>
-
-    <select id="getDeliveryAddressById" parameterType="Integer" resultType="DeliveryAddress">
-        select * from deliveryAddress
-        <where>
-            daId=#{daId}
-        </where>
-    </select>
-
-    <insert id="saveDeliveryAddress" parameterType="DeliveryAddress">
-        insert into deliveryAddress
-        values (null, #{contactName}, #{contactSex}, #{contactTel}, #{address}, #{userId})
-    </insert>
-
-    <update id="updateDeliveryAddress" parameterType="DeliveryAddress">
-        update deliveryAddress
-        set contactName=#{contactName},
-            contactSex=#{contactSex},
-            contactTel=#{contactTel},
-            address=#{address}
-        where daId = #{daId}
-
-    </update>
-
-    <delete id="removeDeliveryAddress" parameterType="Integer">
-        delete
-        from deliveryAddress
-        where daId = #{daId}
-
-    </delete>
 
 </mapper>

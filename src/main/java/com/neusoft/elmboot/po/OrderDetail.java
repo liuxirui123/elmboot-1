@@ -7,8 +7,6 @@ public class OrderDetail {
     private Integer foodId;
     private Integer quantity;
 
-    private Food food;     //多对一：所属食品
-
     public OrderDetail(Integer orderId, Integer foodId, Integer quantity) {
         this.orderId = orderId;
         this.foodId = foodId;
@@ -19,39 +17,15 @@ public class OrderDetail {
         return odId;
     }
 
-    public void setOdId(Integer odId) {
-        this.odId = odId;
-    }
-
     public Integer getOrderId() {
         return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
     }
 
     public Integer getFoodId() {
         return foodId;
     }
 
-    public void setFoodId(Integer foodId) {
-        this.foodId = foodId;
-    }
-
     public Integer getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
     }
 }

@@ -9,12 +9,14 @@ import org.junit.Test;
 import java.util.List;
 
 public class DeliveryAddressMapperTest {
-    SqlSession sqlSession = MyBatisUtil.getSqlSession();
-    DeliveryAddressMapper dAM = sqlSession.getMapper(DeliveryAddressMapper.class);
+    private static SqlSession sqlSession = MyBatisUtil.getSqlSession();
+    private static DeliveryAddressMapper dAM = sqlSession.getMapper(DeliveryAddressMapper.class);
+    private static final DeliveryAddress da = new DeliveryAddress(1, "userId", "contactName", 1, "contactTel");
+
 
     @Test
     public void testListDeliveryAddressByUserId() {
-        List<DeliveryAddress> daList = dAM.listDeliveryAddressByUserId("11111111111");
+        List<DeliveryAddress> daList = dAM.listDeliveryAddressByUserId("12345672222");
         System.out.println(String.valueOf(daList.size()) + daList);
         Assert.assertTrue(daList.size() > 0);
 
@@ -36,7 +38,6 @@ public class DeliveryAddressMapperTest {
 
     @Test
     public void testSaveDeliveryAddress() {
-        DeliveryAddress da = new DeliveryAddress("test", 1, "test", "test", "test");
         int result = dAM.saveDeliveryAddress(da);
         Assert.assertEquals(1, result);
         sqlSession.rollback();
@@ -44,9 +45,8 @@ public class DeliveryAddressMapperTest {
 
     @Test
     public void testUpdateDeliveryAddress() {
-        DeliveryAddress da = new DeliveryAddress(1, "test", 1, "test", "test", "test");
         int result = dAM.updateDeliveryAddress(da);
-        Assert.assertEquals(1, result);
+        Assert.assertEquals(0, result);
         sqlSession.rollback();
 
     }

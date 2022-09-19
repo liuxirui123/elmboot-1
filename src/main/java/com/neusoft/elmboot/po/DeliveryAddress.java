@@ -1,39 +1,38 @@
 package com.neusoft.elmboot.po;
 
+import com.neusoft.elmboot.bo.DeliveryAddressBo;
+
 public class DeliveryAddress {
     private Integer daId;
+    private Integer addressId;
+    private String userId;
     private String contactName;
     private Integer contactSex;
     private String contactTel;
-    private String address;
-    private String userId;
 
-    public DeliveryAddress(Integer daId) {
-        this.daId = daId;
+    private Integer delTag;
+
+    public DeliveryAddress(){
+
     }
-
-    public DeliveryAddress(String contactName, Integer contactSex, String contactTel, String address, String userId) {
+    public DeliveryAddress(Integer addressId, String userId, String contactName, Integer contactSex, String contactTel) {
+        this.addressId = addressId;
+        this.userId = userId;
         this.contactName = contactName;
         this.contactSex = contactSex;
         this.contactTel = contactTel;
-        this.address = address;
-        this.userId = userId;
-    }
-
-    public DeliveryAddress(Integer daId, String contactName, Integer contactSex, String contactTel, String address, String userId) {
-        this(contactName, contactSex, contactTel, address, userId);
-        this.daId = daId;
     }
 
     @Override
     public String toString() {
         return "DeliveryAddress{" +
                 "daId=" + daId +
+                ", addressId=" + addressId +
+                ", userId='" + userId + '\'' +
                 ", contactName='" + contactName + '\'' +
                 ", contactSex=" + contactSex +
                 ", contactTel='" + contactTel + '\'' +
-                ", address='" + address + '\'' +
-                ", userId='" + userId + '\'' +
+                ", delTag=" + delTag +
                 '}';
     }
 
@@ -41,47 +40,23 @@ public class DeliveryAddress {
         return daId;
     }
 
-    public void setDaId(Integer daId) {
-        this.daId = daId;
-    }
-
-    public String getContactName() {
-        return contactName;
-    }
-
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
-    }
-
-    public Integer getContactSex() {
-        return contactSex;
-    }
-
-    public void setContactSex(Integer contactSex) {
-        this.contactSex = contactSex;
-    }
-
-    public String getContactTel() {
-        return contactTel;
-    }
-
-    public void setContactTel(String contactTel) {
-        this.contactTel = contactTel;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public Integer getAddressId() {
+        return addressId;
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getContactName() {
+        return contactName;
+    }
+
+    public Integer getContactSex() {
+        return contactSex;
+    }
+
+    public String getContactTel() {
+        return contactTel;
     }
 }
