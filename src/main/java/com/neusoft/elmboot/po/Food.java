@@ -9,19 +9,14 @@ public class Food {
     private Integer businessId;
     private String remarks;
 
-    @Override
-    public String toString() {
-        return "Food{" +
-                "foodId=" + foodId +
-                ", foodName='" + foodName + '\'' +
-                ", foodExplain='" + foodExplain + '\'' +
-                ", foodImg: 略" + '\'' +
-                ", foodPrice=" + foodPrice +
-                ", businessId=" + businessId +
-                ", remarks='" + remarks + '\'' +
-                '}';
+    public Food(Integer foodId, String foodName, String foodExplain, Double foodPrice, Integer businessId, String remarks) {
+        this.foodId = foodId;
+        this.foodName = foodName;
+        this.foodExplain = foodExplain;
+        this.foodPrice = foodPrice;
+        this.businessId = businessId;
+        this.remarks = remarks;
     }
-
 
     public Integer getBusinessId() {
         return businessId;

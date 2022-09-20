@@ -8,21 +8,18 @@ import org.junit.Test;
 import java.io.IOException;
 
 public class TestRunner {
-    public MyBatisUtil dataCon = new MyBatisUtil();
 
     @Test
     public void testGetSqlSession() {
         SqlSession sqlSession;
-        sqlSession = dataCon.getSqlSession();
+        sqlSession = MyBatisUtil.getSqlSession();
         Assert.assertNotNull(sqlSession);
     }
 
     @Test
     public void TestSelect() throws IOException {
-        SqlSession sqlSession = dataCon.getSqlSession();//sqlSession.selectOne最终结果与映射文件中所匹配的resultType类型
-        Business b = sqlSession.selectOne("com.neusoft.elmboot.mapper.BusinessMapper.getBusinessById", 10001);
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();//sqlSession.selectOne最终结果与映射文件中所匹配的resultType类型
 
-        System.out.println(b);
         sqlSession.close();
     }
 

@@ -1,5 +1,6 @@
 package com.neusoft.elmboot.controller;
 
+import com.neusoft.elmboot.bo.BusinessBo;
 import com.neusoft.elmboot.po.Business;
 import com.neusoft.elmboot.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +17,17 @@ public class BusinessController {
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
-    public List<Business> listBusinessByOrderTypeId(Business business) throws Exception {
+    public List<BusinessBo> listBusinessByOrderTypeId(Business business) throws Exception {
         return businessService.listBusinessByOrderTypeId(business.getOrderTypeId());
     }
 
     @RequestMapping("/listBusiness")
-    public List<Business> listBusiness() {
-        return businessService.listBusinessByOrderTypeId(null);
+    public List<BusinessBo> listBusiness() {
+        return businessService.listBusiness();
     }
 
     @RequestMapping("/getBusinessById")
-    public Business getBusinessById(Business business) throws Exception {
+    public BusinessBo getBusinessById(Business business) throws Exception {
         return businessService.getBusinessById(business.getBusinessId());
     }
 }

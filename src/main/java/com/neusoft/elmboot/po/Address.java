@@ -1,7 +1,7 @@
 package com.neusoft.elmboot.po;
 
 public class Address {
-    private int addressId;
+    private Integer addressId;
     private double longitudes;//经度
     private double latitudes;//纬度
 
@@ -21,6 +21,12 @@ public class Address {
     public Address(double longitudes, double latitudes, String addressExplain) {
         this(longitudes, latitudes);
         this.addressExplain = addressExplain;
+    }
+
+    public Address(Integer addressId, double longitudes, double latitudes, String addressExplain) {
+        this(longitudes, latitudes, addressExplain);
+        this.addressId = addressId;
+
     }
 
     @Override

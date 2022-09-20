@@ -1,15 +1,25 @@
 package com.neusoft.elmboot.mapper;
 
+import com.neusoft.elmboot.ElmBootApplication;
 import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.po.Address;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 
+@SpringBootTest(classes = ElmBootApplication.class)
+@RunWith(SpringRunner.class)
+@Transactional
 public class AddressMapperTest {
-    SqlSession sqlSession = MyBatisUtil.getSqlSession();
-    AddressMapper aM = sqlSession.getMapper(AddressMapper.class);
+
+    @Autowired
+    AddressMapper aM;
 
     @Test
     public void testGetAddressById() {
@@ -25,11 +35,9 @@ public class AddressMapperTest {
     public void testSaveAddress() {
         Address a = new Address(0, 0, "test");
         Assert.assertEquals(1, aM.saveAddress(a));
-        sqlSession.rollback();
 
         a = new Address(0, 0);
         Assert.assertEquals(1, aM.saveAddress(a));
-        sqlSession.rollback();
 
     }
 }

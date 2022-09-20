@@ -1,5 +1,6 @@
 package com.neusoft.elmboot.controller;
 
+import com.neusoft.elmboot.bo.DeliveryAddressBo;
 import com.neusoft.elmboot.po.DeliveryAddress;
 import com.neusoft.elmboot.service.DeliveryAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,13 @@ public class DeliveryAddressController {
     private DeliveryAddressService deliveryAddressService;
 
     @RequestMapping("/listDeliveryAddressByUserId")
-    public List<DeliveryAddress> listDeliveryAddressByUserId(DeliveryAddress deliveryAddress)
+    public List<DeliveryAddressBo> listDeliveryAddressByUserId(DeliveryAddress deliveryAddress)
             throws Exception {
         return deliveryAddressService.listDeliveryAddressByUserId(deliveryAddress.getUserId());
     }
 
     @RequestMapping("/getDeliveryAddressById")
-    public DeliveryAddress getDeliveryAddressById(DeliveryAddress deliveryAddress) throws
+    public DeliveryAddressBo getDeliveryAddressById(DeliveryAddress deliveryAddress) throws
             Exception {
         return deliveryAddressService.getDeliveryAddressById(deliveryAddress.getDaId());
     }

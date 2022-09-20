@@ -2,7 +2,7 @@
 
 ## elm_1.0(initial 版本介绍)
 
-## elm_1.1
+## elm_1.1 success
 
 ### Business
 
@@ -10,92 +10,96 @@
 
 列举所有商家，通过BusinessId排序
 
-## 待实现功能
+## elm_2.0
 
-### 1 商家位置
+### 概述
 
-#### 概述
+增加商家位置信息、地址位置信息、订单起始经纬度
 
-增加商家位置信息、用户位置信息、订单配送距离
+### 前端设计
 
-#### 后端设计
+静态地图
 
-#### 数据库设计
+### 后端设计
 
-##### Business
+#### Business
 
-| No  | 字段名        | 数据类型    | size  | 默认値 | 约束  | 说明   |
-|-----|------------|---------|-------|-----|-----|------|
-| 1   | longitudes | decimal | (9.6) |     | NN  | 商家经度 |
-| 2   | latitudes  | decimal | (8,6) |     | NN  | 商家纬度 |
 
-##### User
 
-| No   | 字段名   | 数据类型 | size | 默认値 | 约束 | 说明   |
-| ---- | -------- | -------- | ---- | ------ | ---- |------|
-| 1   | longitudes | decimal | (9.6) |     | NN  | 用户经度 |
-| 2   | latitudes  | decimal | (8,6) |     | NN  | 用户纬度 |
+### 数据库设计
 
-##### Order
+#### addressPo
 
-| No | 字段名 | 数据类型 | size | 默认値 | 约束 | 说明 |
-|-----|----------|--|------|-----|-----|---------------------|
-| 1 | distance | int | | | NN | 配送距离 /m |
+Id 经纬度 地址描述
 
-### 2 静态地图
+#### business
 
-### 3 动态地图
+经纬度
 
-### 4 评价系统
+#### deliveryaddress
 
-#### 概述
+经纬度  
+
+添加delTag
+删除后，查询Orders依旧可以查询到
+
+#### Order
+
+起点经纬度 商家  
+终点经纬度 配送地址
+
+## elm_3.0 动态地图
+
+## elm_4.0 评价系统
+
+### 概述
 
 实现评价系统
 
-#### 前端设计
+### 前端设计
 
-#### 后端设计(Controller)
+### 后端设计
 
-##### Judgement
+#### Judgement
 
-###### ListJudgementByBusinessId
+##### ListJudgementByBusinessId
 
 根据商家Id获得评价列表
 
-###### GetJudgementById
+##### GetJudgementById
 
 根据Id获得评价
 
-###### CreateJudgement
+##### CreateJudgement
 
 建立评价
 
-##### Business
+#### Business
 
-###### listBusinessByOrderTypeId(已有，重构)
+##### listBusinessByOrderTypeId(已有，重构)
 
 列举一个种类的商家按评分排序
 
-#### 数据库设计
+### 数据库设计
 
-##### Business
+#### Business
 
-| No   | 字段名     | 数据类型 | size  | 默认値 | 约束 | 说明       |
-| ---- | ---------- | -------- | ----- | ------ | ---- | ---------- |
-| 1    | judgeLevel | decimal  | (2,1) | 5.0    | NN   | 商家总评分 |
+| No  | 字段名        | 数据类型    | size  | 默认値 | 约束  |  说明   |
+|-----|------------|---------|-------|-----|-----|:-----:|
+| 1   | judgeLevel | decimal | (2,1) | 5.0 | NN  | 商家总评分 |
 
-##### Order
+#### Order
 
-| No | 字段名 | 数据类型 | size | 默认値 | 约束 | 说明 |
-| :--: | :---------: | :------: | :--: | :----: | :--: | :------: |
-| 1 | JudgementId | int | | | FK | 评价编号 |
+| No  | 字段名         | 数据类型 | size | 默认値 | 约束  | 说明   |
+|-----|-------------|------|------|-----|-----|------|
+| 1   | JudgementId | int  |      |     | FK  | 评价编号 |
 
-##### Judgement
+#### Judgement
 
-| No   | 字段名         | 数据类型 | size | 默认值 | 约束       | 说明            |
-| ---- | -------------- | -------- | ---- | ------ | ---------- | --------------- |
-| 1    | judgementId    | int      |      |        | PK、NN、AI | 评价编号        |
-| 2    | orderId        | int      |      |        | FK、NN     | 所属订单        |
-| 3    | content        | varchar  | 200  | NULL   |            | 评价详情        |
-| 4    | judgementLevel | int      |      | 5      | NN         | 评价星级（1-5） |
+| No  |      字段名       |  数据类型   | size | 默认值  | 约束       | 说明        |
+|-----|:--------------:|:-------:|:----:|------|----------|-----------|
+| 1   |  judgementId   |   int   |      |      | PK、NN、AI | 评价编号      |
+| 2   |    orderId     |   int   |      |      | FK、NN    | 所属订单      |
+| 3   |    content     | varchar | 200  | NULL |          | 评价详情      |
+| 4   | judgementLevel |   int   |      | 5    | NN       | 评价星级（1-5） |
 

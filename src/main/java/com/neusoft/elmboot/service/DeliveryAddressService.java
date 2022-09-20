@@ -1,17 +1,18 @@
 package com.neusoft.elmboot.service;
 
+import com.neusoft.elmboot.bo.DeliveryAddressBo;
 import com.neusoft.elmboot.po.DeliveryAddress;
 
 import java.util.List;
 
 public interface DeliveryAddressService {
-    public List<DeliveryAddress> listDeliveryAddressByUserId(String userId);
+    List<DeliveryAddressBo> listDeliveryAddressByUserId(String userId);
 
-    public DeliveryAddress getDeliveryAddressById(Integer daId);
+    DeliveryAddressBo getDeliveryAddressById(Integer daId);
 
-    public int saveDeliveryAddress(DeliveryAddress deliveryAddress);
+    int saveDeliveryAddress(DeliveryAddress deliveryAddress);
 
-    public int updateDeliveryAddress(DeliveryAddress deliveryAddress);
+    int updateDeliveryAddress(DeliveryAddress deliveryAddress);
 
-    public int removeDeliveryAddress(Integer daId);
+    int removeDeliveryAddress(Integer daId);
 }
