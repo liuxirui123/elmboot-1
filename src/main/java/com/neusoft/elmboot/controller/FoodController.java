@@ -17,7 +17,7 @@ public class FoodController {
     private FoodService foodService;
 
     @RequestMapping("/listFoodByBusinessId")
-    public List<FoodBo> listFoodByBusinessId(FoodBo fB) {
-        return foodService.listFoodByBusinessId(fB.getBusinessId());
+    public List<FoodBo> listFoodByBusinessId(Food f) {
+        return foodService.listFoodByBusinessId(f.getBusinessId());
     }
 }
