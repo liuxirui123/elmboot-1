@@ -1,9 +1,7 @@
 package com.neusoft.elmboot.mapper;
 
 import com.neusoft.elmboot.ElmBootApplication;
-import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.po.Address;
-import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

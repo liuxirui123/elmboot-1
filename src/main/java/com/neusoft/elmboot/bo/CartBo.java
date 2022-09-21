@@ -1,14 +1,13 @@
 package com.neusoft.elmboot.bo;
 
 import com.neusoft.elmboot.po.Cart;
-import com.neusoft.elmboot.po.Food;
 
 public class CartBo {
     private Integer cartId;
     private String userId;
     private Integer quantity;
 
-    private Food food;//多对一：所属食品
+    private FoodBo foodBo;//多对一：所属食品
 
     private BusinessBo businessBo;//多对一：所属商家
 
@@ -18,17 +17,17 @@ public class CartBo {
         this.quantity = c.getQuantity();
     }
 
-    public CartBo(Cart c, Food f, BusinessBo bB) {
+    public CartBo(Cart c, FoodBo fB, BusinessBo bB) {
         this(c);
-        this.food = f;
+        this.foodBo = fB;
         this.businessBo = bB;
     }
 
-    public CartBo(Integer cartId, String userId, Integer quantity, Food food, BusinessBo businessBo) {
+    public CartBo(Integer cartId, String userId, Integer quantity, FoodBo fB, BusinessBo businessBo) {
         this.cartId = cartId;
         this.userId = userId;
         this.quantity = quantity;
-        this.food = food;
+        this.foodBo = fB;
         this.businessBo = businessBo;
     }
 
@@ -38,7 +37,7 @@ public class CartBo {
                 "cartId=" + cartId +
                 ", userId='" + userId + '\'' +
                 ", quantity=" + quantity +
-                ", food=" + food +
+                ", food=" + foodBo +
                 ", businessBo=" + businessBo +
                 '}';
     }

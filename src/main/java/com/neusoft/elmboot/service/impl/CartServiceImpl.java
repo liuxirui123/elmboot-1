@@ -2,13 +2,13 @@ package com.neusoft.elmboot.service.impl;
 
 import com.neusoft.elmboot.bo.BusinessBo;
 import com.neusoft.elmboot.bo.CartBo;
+import com.neusoft.elmboot.bo.FoodBo;
 import com.neusoft.elmboot.mapper.AddressMapper;
 import com.neusoft.elmboot.mapper.BusinessMapper;
 import com.neusoft.elmboot.mapper.CartMapper;
 import com.neusoft.elmboot.mapper.FoodMapper;
 import com.neusoft.elmboot.po.Business;
 import com.neusoft.elmboot.po.Cart;
-import com.neusoft.elmboot.po.Food;
 import com.neusoft.elmboot.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,8 +57,8 @@ public class CartServiceImpl implements CartService {
         }
         Business b = businessMapper.getBusinessById(c.getBusinessId());
         BusinessBo bB = new BusinessBo(b, addressMapper.getAddressById(b.getAddressId()));
-        Food f = foodMapper.getFoodById(c.getFoodId());
-        return new CartBo(c, f, bB);
+        FoodBo fB =new FoodBo(foodMapper.getFoodById(c.getFoodId())) ;
+        return new CartBo(c, fB, bB);
     }
 
     private List<CartBo> PoToBo(List<Cart> cList) {

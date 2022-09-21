@@ -15,7 +15,7 @@ public class TestUtil {
             for (Object o : list) {
                 testSingle(o, false);
             }
-            System.out.println("");
+            System.out.println();
         }
 
     }

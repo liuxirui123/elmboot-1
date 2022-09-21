@@ -1,9 +1,6 @@
 package com.neusoft.elmboot.service.impl;
 
-import com.neusoft.elmboot.bo.BusinessBo;
-import com.neusoft.elmboot.bo.DeliveryAddressBo;
-import com.neusoft.elmboot.bo.OrderDetailBo;
-import com.neusoft.elmboot.bo.OrdersBo;
+import com.neusoft.elmboot.bo.*;
 import com.neusoft.elmboot.mapper.*;
 import com.neusoft.elmboot.po.*;
 import com.neusoft.elmboot.service.OrdersService;
@@ -51,7 +48,7 @@ public class OrdersServiceImpl implements OrdersService {
 
         //3、批量添加订单明细
         for (Cart c : cartList) {
-            OrderDetail od=new OrderDetail(orderId, c.getFoodId(), c.getQuantity());
+            OrderDetail od = new OrderDetail(orderId, c.getFoodId(), c.getQuantity());
             orderDetailMapper.saveOrderDetail(od);
         }
 
@@ -80,7 +77,10 @@ public class OrdersServiceImpl implements OrdersService {
 
         List<OrderDetailBo> odBList = new ArrayList<>();
         for (OrderDetail od : orderDetailMapper.listOrderDetailByOrderId(o.getOrderId())) {
-            odBList.add(new OrderDetailBo(od, foodMapper.getFoodById(od.getFoodId())));
+            odBList.add(
+                    new OrderDetailBo(
+                            od, new FoodBo(
+                            foodMapper.getFoodById(od.getFoodId()))));
         }
         return new OrdersBo(o, bB, daB, odBList);
     }

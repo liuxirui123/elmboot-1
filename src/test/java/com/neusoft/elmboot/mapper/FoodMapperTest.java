@@ -2,9 +2,7 @@ package com.neusoft.elmboot.mapper;
 
 import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.TestUtil;
-import com.neusoft.elmboot.po.Food;
 import org.apache.ibatis.session.SqlSession;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;

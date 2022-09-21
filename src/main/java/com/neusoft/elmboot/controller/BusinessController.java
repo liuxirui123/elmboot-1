@@ -17,7 +17,7 @@ public class BusinessController {
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
-    public List<BusinessBo> listBusinessByOrderTypeId(Business business) throws Exception {
+    public List<BusinessBo> listBusinessByOrderTypeId(Business business) {
         return businessService.listBusinessByOrderTypeId(business.getOrderTypeId());
     }
 
@@ -27,7 +27,7 @@ public class BusinessController {
     }
 
     @RequestMapping("/getBusinessById")
-    public BusinessBo getBusinessById(Business business) throws Exception {
+    public BusinessBo getBusinessById(Business business) {
         return businessService.getBusinessById(business.getBusinessId());
     }
 }

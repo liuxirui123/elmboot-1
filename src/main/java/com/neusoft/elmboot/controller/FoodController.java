@@ -1,5 +1,6 @@
 package com.neusoft.elmboot.controller;
 
+import com.neusoft.elmboot.bo.FoodBo;
 import com.neusoft.elmboot.po.Food;
 import com.neusoft.elmboot.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class FoodController {
     private FoodService foodService;
 
     @RequestMapping("/listFoodByBusinessId")
-    public List<Food> listFoodByBusinessId(Food food) throws Exception {
-        return foodService.listFoodByBusinessId(food.getBusinessId());
+    public List<FoodBo> listFoodByBusinessId(FoodBo fB) {
+        return foodService.listFoodByBusinessId(fB.getBusinessId());
     }
 }

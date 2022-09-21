@@ -11,9 +11,9 @@ public class OrdersBo {
     private Integer orderState; //订单状态（0：未支付； 1：已支付）
     private String orderDate;
     private Double orderTotal;
-    private BusinessBo b;//多对一：所属商家
-    private DeliveryAddressBo da;
-    private List<OrderDetailBo> odList;//一对多：订单明细
+    private BusinessBo businessBo;//多对一：所属商家
+    private DeliveryAddressBo daBo;
+    private List<OrderDetailBo> odBoList;//一对多：订单明细
 
     public OrdersBo(Orders o) {
         this.orderId = o.getOrderId();
@@ -23,11 +23,11 @@ public class OrdersBo {
         this.orderTotal = o.getOrderTotal();
     }
 
-    public OrdersBo(Orders o, BusinessBo b, DeliveryAddressBo da, List<OrderDetailBo> odList) {
+    public OrdersBo(Orders o, BusinessBo businessBo, DeliveryAddressBo daBo, List<OrderDetailBo> odBoList) {
         this(o);
-        this.b = b;
-        this.da = da;
-        this.odList = odList;
+        this.businessBo = businessBo;
+        this.daBo = daBo;
+        this.odBoList = odBoList;
     }
 
 }

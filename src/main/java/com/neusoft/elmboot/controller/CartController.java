@@ -16,23 +16,23 @@ public class CartController {
     private CartService cartService;
 
     @RequestMapping("/listCart")
-    public List<CartBo> listCart(Cart cart) throws Exception {
+    public List<CartBo> listCart(Cart cart) {
         return cartService.listCart(cart);
     }
 
     @RequestMapping("/saveCart")
-    public int saveCart(Cart cart) throws Exception {
+    public int saveCart(Cart cart) {
         return cartService.saveCart(cart);
     }
 
     @RequestMapping("/updateCart")
-    public int updateCart(Cart cart) throws Exception {
+    public int updateCart(Cart cart) {
         return cartService.updateCart(cart);
     }
 
     @RequestMapping("/removeCart")
 
-    public int removeCart(Cart cart) throws Exception {
+    public int removeCart(Cart cart) {
         return cartService.removeCart(cart);
     }
 }

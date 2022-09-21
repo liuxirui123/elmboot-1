@@ -20,4 +20,8 @@ public class FoodBo {
         this.businessId = f.getBusinessId();
         this.remarks = f.getRemarks();
     }
+
+    public Integer getBusinessId() {
+        return businessId;
+    }
 }

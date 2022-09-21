@@ -1,7 +1,5 @@
 package com.neusoft.elmboot.po;
 
-import com.neusoft.elmboot.bo.DeliveryAddressBo;
-
 public class DeliveryAddress {
     private Integer daId;
     private Integer addressId;

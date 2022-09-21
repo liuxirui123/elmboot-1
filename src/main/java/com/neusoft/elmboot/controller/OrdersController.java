@@ -17,17 +17,17 @@ public class OrdersController {
     private OrdersService ordersService;
 
     @RequestMapping("/createOrders")
-    public int createOrders(Orders orders) throws Exception {
+    public int createOrders(Orders orders) {
         return ordersService.createOrders(orders);
     }
 
     @RequestMapping("/getOrdersById")
-    public OrdersBo getOrdersById(Orders orders) throws Exception {
+    public OrdersBo getOrdersById(Orders orders) {
         return ordersService.getOrdersById(orders.getOrderId());
     }
 
     @RequestMapping("/listOrdersByUserId")
-    public List<OrdersBo> listOrdersByUserId(Orders orders) throws Exception {
+    public List<OrdersBo> listOrdersByUserId(Orders orders) {
         return ordersService.listOrdersByUserId(orders.getUserId());
     }
 }

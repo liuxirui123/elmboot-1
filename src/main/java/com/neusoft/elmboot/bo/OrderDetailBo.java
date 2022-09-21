@@ -1,13 +1,12 @@
 package com.neusoft.elmboot.bo;
 
-import com.neusoft.elmboot.po.Food;
 import com.neusoft.elmboot.po.OrderDetail;
 
 public class OrderDetailBo {
     private Integer odId;
     private Integer orderId;
     private Integer quantity;
-    private Food f;
+    private FoodBo foodBo;
 
     public OrderDetailBo(OrderDetail od) {
         this.odId = od.getOdId();
@@ -15,9 +14,9 @@ public class OrderDetailBo {
         this.quantity = od.getQuantity();
     }
 
-    public OrderDetailBo(OrderDetail od, Food f){
+    public OrderDetailBo(OrderDetail od, FoodBo fB){
         this(od);
-        this.f=f;
+        this.foodBo=fB;
     }
 
 }

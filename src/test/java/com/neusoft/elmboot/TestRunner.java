@@ -1,6 +1,5 @@
 package com.neusoft.elmboot;
 
-import com.neusoft.elmboot.po.Business;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +16,7 @@ public class TestRunner {
     }
 
     @Test
-    public void TestSelect() throws IOException {
+    public void TestSelect() {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();//sqlSession.selectOne最终结果与映射文件中所匹配的resultType类型
 
         sqlSession.close();
