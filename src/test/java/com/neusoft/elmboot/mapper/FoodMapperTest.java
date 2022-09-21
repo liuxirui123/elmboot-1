@@ -1,12 +1,13 @@
 package com.neusoft.elmboot.mapper;
 
 import com.neusoft.elmboot.MyBatisUtil;
+import com.neusoft.elmboot.TestUtil;
 import com.neusoft.elmboot.po.Food;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class FoodMapperTest {
     SqlSession sqlSession = MyBatisUtil.getSqlSession();
@@ -14,27 +15,22 @@ public class FoodMapperTest {
 
     @Test
     public void testListFoodByBusinessId() {
-        List<Food> fList = fM.listFoodByBusinessId(10001);
-        Assert.assertTrue(fList.size() > 0);
-        System.out.println(String.valueOf(fList.size()) + fList);
+        int[] businessIds = {-1, 1, 10001, 10002, 10000000};
+        boolean[] ifNulls = {true, true, false, false, true};
+        for (int i = 0; i < ifNulls.length; i++) {
+            TestUtil.testList(new ArrayList<>(fM.listFoodByBusinessId(businessIds[i])), ifNulls[i]);
+        }
 
-        fList = fM.listFoodByBusinessId(-1);
-        Assert.assertEquals(0, fList.size());
-        System.out.println(fList);
     }
 
     @Test
     public void testGetFOodById() {
-        Food f = fM.getFoodById(1);
-        Assert.assertNotNull(f);
-        System.out.println(f);
+        int[] foodIds = {-1, 0, 1, 2, 3, 4, 5};
+        boolean[] ifNulls = {true, true, false, false, false, false, false};
+        for(int i=0;i<ifNulls.length;i++){
+            TestUtil.testSingle(fM.getFoodById(foodIds[i]),ifNulls[i]);
+        }
 
-        f = fM.getFoodById(2);
-        Assert.assertNotNull(f);
-        System.out.println(f);
-
-        f = fM.getFoodById(-1);
-        Assert.assertNull(f);
     }
 
 }

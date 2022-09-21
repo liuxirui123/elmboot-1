@@ -31,4 +31,15 @@ public class CartBo {
         this.food = food;
         this.businessBo = businessBo;
     }
+
+    @Override
+    public String toString() {
+        return "CartBo{" +
+                "cartId=" + cartId +
+                ", userId='" + userId + '\'' +
+                ", quantity=" + quantity +
+                ", food=" + food +
+                ", businessBo=" + businessBo +
+                '}';
+    }
 }
