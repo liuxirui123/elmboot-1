@@ -21,7 +21,31 @@ public class Food {
                 '}';
     }
 
+    public Integer getFoodId() {
+        return foodId;
+    }
+
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public String getFoodExplain() {
+        return foodExplain;
+    }
+
+    public String getFoodImg() {
+        return foodImg;
+    }
+
+    public Double getFoodPrice() {
+        return foodPrice;
+    }
+
     public Integer getBusinessId() {
         return businessId;
+    }
+
+    public String getRemarks() {
+        return remarks;
     }
 }
