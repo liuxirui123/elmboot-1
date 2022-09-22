@@ -60,4 +60,28 @@ public class User {
     public Integer getDelTag() {
         return delTag;
     }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setUserSex(Integer userSex) {
+        this.userSex = userSex;
+    }
+
+    public void setUserImg(String userImg) {
+        this.userImg = userImg;
+    }
+
+    public void setDelTag(Integer delTag) {
+        this.delTag = delTag;
+    }
 }

@@ -49,4 +49,32 @@ public class Food {
     public String getRemarks() {
         return remarks;
     }
+
+    public void setFoodId(Integer foodId) {
+        this.foodId = foodId;
+    }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setFoodExplain(String foodExplain) {
+        this.foodExplain = foodExplain;
+    }
+
+    public void setFoodImg(String foodImg) {
+        this.foodImg = foodImg;
+    }
+
+    public void setFoodPrice(Double foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public void setBusinessId(Integer businessId) {
+        this.businessId = businessId;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
 }

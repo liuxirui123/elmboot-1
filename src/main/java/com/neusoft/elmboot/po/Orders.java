@@ -51,4 +51,28 @@ public class Orders {
     public void setOrderDate(String currentDate) {
         this.orderDate = currentDate;
     }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setBusinessId(Integer businessId) {
+        this.businessId = businessId;
+    }
+
+    public void setDaId(Integer daId) {
+        this.daId = daId;
+    }
+
+    public void setOrderState(Integer orderState) {
+        this.orderState = orderState;
+    }
+
+    public void setOrderTotal(Double orderTotal) {
+        this.orderTotal = orderTotal;
+    }
 }

@@ -61,4 +61,40 @@ public class Business {
     public String getRemarks() {
         return remarks;
     }
+
+    public void setBusinessId(Integer businessId) {
+        this.businessId = businessId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
+    }
+
+    public void setOrderTypeId(Integer orderTypeId) {
+        this.orderTypeId = orderTypeId;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
+    public void setBusinessExplain(String businessExplain) {
+        this.businessExplain = businessExplain;
+    }
+
+    public void setBusinessImg(String businessImg) {
+        this.businessImg = businessImg;
+    }
+
+    public void setStarPrice(double starPrice) {
+        this.starPrice = starPrice;
+    }
+
+    public void setDeliveryPrice(double deliveryPrice) {
+        this.deliveryPrice = deliveryPrice;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
 }

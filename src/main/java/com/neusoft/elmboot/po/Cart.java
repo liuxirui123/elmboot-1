@@ -59,4 +59,24 @@ public class Cart {
     public Integer getQuantity() {
         return quantity;
     }
+
+    public void setCartId(Integer cartId) {
+        this.cartId = cartId;
+    }
+
+    public void setFoodId(Integer foodId) {
+        this.foodId = foodId;
+    }
+
+    public void setBusinessId(Integer businessId) {
+        this.businessId = businessId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }

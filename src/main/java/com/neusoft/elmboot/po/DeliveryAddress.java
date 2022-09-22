@@ -68,4 +68,32 @@ public class DeliveryAddress {
     public String getContactTel() {
         return contactTel;
     }
+
+    public void setDaId(Integer daId) {
+        this.daId = daId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
+
+    public void setContactSex(Integer contactSex) {
+        this.contactSex = contactSex;
+    }
+
+    public void setContactTel(String contactTel) {
+        this.contactTel = contactTel;
+    }
+
+    public void setDelTag(Integer delTag) {
+        this.delTag = delTag;
+    }
 }
