@@ -19,4 +19,35 @@ public class OrderDetailBo {
         this.foodBo=fB;
     }
 
+    public Integer getOdId() {
+        return odId;
+    }
+
+    public void setOdId(Integer odId) {
+        this.odId = odId;
+    }
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public FoodBo getFoodBo() {
+        return foodBo;
+    }
+
+    public void setFoodBo(FoodBo foodBo) {
+        this.foodBo = foodBo;
+    }
 }

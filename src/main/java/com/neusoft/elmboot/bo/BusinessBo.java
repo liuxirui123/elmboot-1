@@ -4,6 +4,7 @@ package com.neusoft.elmboot.bo;
 import com.neusoft.elmboot.po.Address;
 import com.neusoft.elmboot.po.Business;
 
+
 public class BusinessBo {
 
 
@@ -19,6 +20,9 @@ public class BusinessBo {
 
     private Address address;
 
+    public BusinessBo() {
+
+    }
 
     public BusinessBo(Business b) {
         this.businessId = b.getBusinessId();
@@ -52,5 +56,63 @@ public class BusinessBo {
         this.address = a;
     }
 
+    public Integer getBusinessId() {
+        return businessId;
+    }
 
+    public void setBusinessId(Integer businessId) {
+        this.businessId = businessId;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
+    public String getBusinessExplain() {
+        return businessExplain;
+    }
+
+    public void setBusinessExplain(String businessExplain) {
+        this.businessExplain = businessExplain;
+    }
+
+    public String getBusinessImg() {
+        return businessImg;
+    }
+
+    public void setBusinessImg(String businessImg) {
+        this.businessImg = businessImg;
+    }
+
+    public double getStarPrice() {
+        return starPrice;
+    }
+
+    public void setStarPrice(double starPrice) {
+        this.starPrice = starPrice;
+    }
+
+    public double getDeliveryPrice() {
+        return deliveryPrice;
+    }
+
+    public void setDeliveryPrice(double deliveryPrice) {
+        this.deliveryPrice = deliveryPrice;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
 }

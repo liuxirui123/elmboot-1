@@ -43,4 +43,32 @@ public class DeliveryAddressBo {
     public Address getAddress() {
         return new Address(address);
     }
+
+    public Integer getDaId() {
+        return daId;
+    }
+
+    public void setDaId(Integer daId) {
+        this.daId = daId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
+
+    public void setContactSex(Integer contactSex) {
+        this.contactSex = contactSex;
+    }
+
+    public void setContactTel(String contactTel) {
+        this.contactTel = contactTel;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }

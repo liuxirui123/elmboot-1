@@ -30,4 +30,67 @@ public class OrdersBo {
         this.odBoList = odBoList;
     }
 
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Integer getOrderState() {
+        return orderState;
+    }
+
+    public void setOrderState(Integer orderState) {
+        this.orderState = orderState;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public Double getOrderTotal() {
+        return orderTotal;
+    }
+
+    public void setOrderTotal(Double orderTotal) {
+        this.orderTotal = orderTotal;
+    }
+
+    public BusinessBo getBusinessBo() {
+        return businessBo;
+    }
+
+    public void setBusinessBo(BusinessBo businessBo) {
+        this.businessBo = businessBo;
+    }
+
+    public DeliveryAddressBo getDaBo() {
+        return daBo;
+    }
+
+    public void setDaBo(DeliveryAddressBo daBo) {
+        this.daBo = daBo;
+    }
+
+    public List<OrderDetailBo> getOdBoList() {
+        return odBoList;
+    }
+
+    public void setOdBoList(List<OrderDetailBo> odBoList) {
+        this.odBoList = odBoList;
+    }
 }
