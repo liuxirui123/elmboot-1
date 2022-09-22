@@ -24,6 +24,18 @@ public class FoodBo {
         this.remarks = f.getRemarks();
     }
 
+    @Override
+    public String toString() {
+        return "FoodBo{" +
+                "foodId=" + foodId +
+                ", foodName='" + foodName + '\'' +
+                ", foodExplain='" + foodExplain + '\'' +
+                ", foodPrice=" + foodPrice +
+                ", businessId=" + businessId +
+                ", remarks='" + remarks + '\'' +
+                '}';
+    }
+
     public Integer getBusinessId() {
         return businessId;
     }

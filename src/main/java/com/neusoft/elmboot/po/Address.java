@@ -78,4 +78,20 @@ public class Address {
     public String getAddressExplain() {
         return addressExplain;
     }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
+    }
+
+    public void setLongitudes(double longitudes) {
+        this.longitudes = longitudes;
+    }
+
+    public void setLatitudes(double latitudes) {
+        this.latitudes = latitudes;
+    }
+
+    public void setAddressExplain(String addressExplain) {
+        this.addressExplain = addressExplain;
+    }
 }

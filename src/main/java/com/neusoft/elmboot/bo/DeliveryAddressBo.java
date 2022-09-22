@@ -45,7 +45,7 @@ public class DeliveryAddressBo {
     }
 
     public Address getAddress() {
-        return new Address(address);
+        return address;
     }
 
     public Integer getDaId() {
