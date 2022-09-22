@@ -103,3 +103,4 @@ Id 经纬度 地址描述
 | 3   |    content     | varchar | 200  | NULL |          | 评价详情      |
 | 4   | judgementLevel |   int   |      | 5    | NN       | 评价星级（1-5） |
 
+test
