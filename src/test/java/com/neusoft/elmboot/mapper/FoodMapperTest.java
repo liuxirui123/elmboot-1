@@ -16,7 +16,7 @@ public class FoodMapperTest {
         int[] businessIds = {-1, 1, 10001, 10002, 10000000};
         boolean[] ifNulls = {true, true, false, false, true};
         for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testList(new ArrayList<>(fM.listFoodByBusinessId(businessIds[i])), ifNulls[i]);
+            TestUtil.testGetList(new ArrayList<>(fM.listFoodByBusinessId(businessIds[i])), ifNulls[i]);
         }
 
     }
@@ -26,7 +26,7 @@ public class FoodMapperTest {
         int[] foodIds = {-1, 0, 1, 2, 3, 4, 5};
         boolean[] ifNulls = {true, true, false, false, false, false, false};
         for(int i=0;i<ifNulls.length;i++){
-            TestUtil.testSingle(fM.getFoodById(foodIds[i]),ifNulls[i]);
+            TestUtil.testGetSingle(fM.getFoodById(foodIds[i]),ifNulls[i]);
         }
 
     }

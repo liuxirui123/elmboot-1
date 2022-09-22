@@ -10,9 +10,9 @@ public interface DeliveryAddressService {
 
     DeliveryAddressBo getDeliveryAddressById(Integer daId);
 
-    int saveDeliveryAddress(DeliveryAddress deliveryAddress);
+    int saveDeliveryAddress(DeliveryAddressBo deliveryAddress);
 
-    int updateDeliveryAddress(DeliveryAddress deliveryAddress);
+    int updateDeliveryAddress(DeliveryAddressBo deliveryAddress);
 
     int removeDeliveryAddress(Integer daId);
 }

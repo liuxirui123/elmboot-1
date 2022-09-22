@@ -3,10 +3,12 @@ package com.neusoft.elmboot.service.impl;
 import com.neusoft.elmboot.bo.DeliveryAddressBo;
 import com.neusoft.elmboot.mapper.AddressMapper;
 import com.neusoft.elmboot.mapper.DeliveryAddressMapper;
+import com.neusoft.elmboot.po.Address;
 import com.neusoft.elmboot.po.DeliveryAddress;
 import com.neusoft.elmboot.service.DeliveryAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +33,16 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
     }
 
     @Override
-    public int saveDeliveryAddress(DeliveryAddress deliveryAddress) {
-        return deliveryAddressMapper.saveDeliveryAddress(deliveryAddress);
+    @Transactional
+    public int saveDeliveryAddress(DeliveryAddressBo dABo) {
+        addressMapper.saveAddress(new Address(dABo.getAddress()));
+        return deliveryAddressMapper.saveDeliveryAddress(new DeliveryAddress(dABo));
     }
 
     @Override
-    public int updateDeliveryAddress(DeliveryAddress deliveryAddress) {
-        return deliveryAddressMapper.updateDeliveryAddress(deliveryAddress);
+    public int updateDeliveryAddress(DeliveryAddressBo dABo) {
+        addressMapper.updateAddress(new Address(dABo.getAddress()));
+        return deliveryAddressMapper.updateDeliveryAddress(new DeliveryAddress(dABo));
     }
 
     @Override
@@ -45,13 +50,13 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
         return deliveryAddressMapper.removeDeliveryAddress(daId);
     }
 
-    private DeliveryAddressBo PoToBo(DeliveryAddress da){
-        return new DeliveryAddressBo(da,addressMapper.getAddressById(da.getAddressId()));
+    private DeliveryAddressBo PoToBo(DeliveryAddress da) {
+        return new DeliveryAddressBo(da, addressMapper.getAddressById(da.getAddressId()));
     }
 
-    private List<DeliveryAddressBo> PoToPo(List<DeliveryAddress> daList){
-        List<DeliveryAddressBo> daBoList=new ArrayList<>();
-        for( DeliveryAddress da :daList){
+    private List<DeliveryAddressBo> PoToPo(List<DeliveryAddress> daList) {
+        List<DeliveryAddressBo> daBoList = new ArrayList<>();
+        for (DeliveryAddress da : daList) {
             daBoList.add(PoToBo(da));
         }
         return daBoList;

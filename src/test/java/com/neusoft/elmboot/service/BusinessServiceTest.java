@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
-import static com.neusoft.elmboot.TestUtil.testSingle;
+import static com.neusoft.elmboot.TestUtil.testGetSingle;
 
 @SpringBootTest(classes = ElmBootApplication.class)
 @RunWith(SpringRunner.class)
@@ -24,7 +24,7 @@ public class BusinessServiceTest {
 
     @Test
     public void testListBusiness() {
-        TestUtil.testList(new ArrayList<>(bS.listBusiness()), false);
+        TestUtil.testGetList(new ArrayList<>(bS.listBusiness()), false);
     }
 
     @Test
@@ -32,16 +32,16 @@ public class BusinessServiceTest {
         int[] orderTypeIds = {1, 4, 0};
         boolean[] ifNulls = {false, false, true};
         for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testList(new ArrayList<>(bS.listBusinessByOrderTypeId(orderTypeIds[i])), ifNulls[i]);
+            TestUtil.testGetList(new ArrayList<>(bS.listBusinessByOrderTypeId(orderTypeIds[i])), ifNulls[i]);
         }
     }
 
 
     @Test
     public void testGetBusinessById() {
-        testSingle(bS.getBusinessById(10001), false);
+        testGetSingle(bS.getBusinessById(10001), false);
 
-        testSingle(bS.getBusinessById(0), true);
+        testGetSingle(bS.getBusinessById(0), true);
     }
 
 

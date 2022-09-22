@@ -29,6 +29,13 @@ public class Address {
 
     }
 
+    public Address(Address a) {
+        this.addressId = a.getAddressId();
+        this.longitudes = a.getLongitudes();
+        this.latitudes = a.getLatitudes();
+        this.addressExplain = a.getAddressExplain();
+    }
+
     @Override
     public String toString() {
         return "Address{" +

@@ -29,7 +29,7 @@ public class CartServiceTest {
         boolean[] ifNulls = {false, true, true, true,true};
 
         for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testList(new ArrayList<>(cS.listCart(new Cart(businessIds[i], userIds[i]))), ifNulls[i]);
+            TestUtil.testGetList(new ArrayList<>(cS.listCart(new Cart(businessIds[i], userIds[i]))), ifNulls[i]);
         }
     }
 

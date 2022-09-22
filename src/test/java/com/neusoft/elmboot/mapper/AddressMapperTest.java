@@ -1,6 +1,7 @@
 package com.neusoft.elmboot.mapper;
 
 import com.neusoft.elmboot.ElmBootApplication;
+import com.neusoft.elmboot.TestUtil;
 import com.neusoft.elmboot.po.Address;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,21 +22,37 @@ public class AddressMapperTest {
 
     @Test
     public void testGetAddressById() {
-        Address a = aM.getAddressById(1);
-        Assert.assertNotNull(a);
-        System.out.println(a);
-
-        a = aM.getAddressById(0);
-        Assert.assertNull(a);
+        int[] aIds = {-1, 1, 2, 3, 4, 100001231};
+        boolean[] ifNulls = {true, false, false, false, false, true};
+        for (int i = 0; i < ifNulls.length; i++) {
+            TestUtil.testGetSingle(aM.getAddressById(aIds[i]), ifNulls[i]);
+        }
     }
 
     @Test
+    @Transactional
     public void testSaveAddress() {
-        Address a = new Address(0, 0, "test");
-        Assert.assertEquals(1, aM.saveAddress(a));
+        int[] results = {1, 1};
+        Address[] aList = {new Address(0, 0, "test"),
+                new Address(0, 0)};
 
-        a = new Address(0, 0);
-        Assert.assertEquals(1, aM.saveAddress(a));
+
+        for (int i = 0; i < results.length; i++) {
+            Assert.assertEquals(results[i], aM.saveAddress(aList[i]));
+        }
+    }
+
+    @Test
+    @Transactional
+    public void testUpdateAddress() {
+        int[] results = {1, 1, 1, 0};
+        Address[] aList = {new Address(1, 0, 0, "test"),
+                new Address(2, 2, 0, "test"),
+                new Address(5, 2, 0, "test"),
+                new Address(-1, 2, 0, "test")};
+        for (int i = 0; i < results.length; i++) {
+            Assert.assertEquals(results[i], aM.updateAddress(aList[i]));
+        }
 
     }
 }

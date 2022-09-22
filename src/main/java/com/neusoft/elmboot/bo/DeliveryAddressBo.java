@@ -23,4 +23,24 @@ public class DeliveryAddressBo {
         this(da);
         this.address = a;
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public Integer getContactSex() {
+        return contactSex;
+    }
+
+    public String getContactTel() {
+        return contactTel;
+    }
+
+    public Address getAddress() {
+        return new Address(address);
+    }
 }

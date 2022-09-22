@@ -1,5 +1,7 @@
 package com.neusoft.elmboot.po;
 
+import com.neusoft.elmboot.bo.DeliveryAddressBo;
+
 public class DeliveryAddress {
     private Integer daId;
     private Integer addressId;
@@ -10,9 +12,18 @@ public class DeliveryAddress {
 
     private Integer delTag;
 
-    public DeliveryAddress(){
+    public DeliveryAddress() {
 
     }
+
+    public DeliveryAddress(DeliveryAddressBo dABo) {
+        this.addressId = dABo.getAddress().getAddressId();
+        this.userId= dABo.getUserId();
+        this.contactName=dABo.getContactName();
+        this.contactSex=dABo.getContactSex();
+        this.contactTel=dABo.getContactTel();
+    }
+
     public DeliveryAddress(Integer addressId, String userId, String contactName, Integer contactSex, String contactTel) {
         this.addressId = addressId;
         this.userId = userId;

@@ -16,28 +16,28 @@ public class DeliveryAddressController {
     private DeliveryAddressService deliveryAddressService;
 
     @RequestMapping("/listDeliveryAddressByUserId")
-    public List<DeliveryAddressBo> listDeliveryAddressByUserId(DeliveryAddress deliveryAddress) {
-        return deliveryAddressService.listDeliveryAddressByUserId(deliveryAddress.getUserId());
+    public List<DeliveryAddressBo> listDeliveryAddressByUserId(DeliveryAddress dA) {
+        return deliveryAddressService.listDeliveryAddressByUserId(dA.getUserId());
     }
 
     @RequestMapping("/getDeliveryAddressById")
-    public DeliveryAddressBo getDeliveryAddressById(DeliveryAddress deliveryAddress) {
-        return deliveryAddressService.getDeliveryAddressById(deliveryAddress.getDaId());
+    public DeliveryAddressBo getDeliveryAddressById(DeliveryAddress dA) {
+        return deliveryAddressService.getDeliveryAddressById(dA.getDaId());
     }
 
     @RequestMapping("/saveDeliveryAddress")
-    public int saveDeliveryAddress(DeliveryAddress deliveryAddress) {
-        return deliveryAddressService.saveDeliveryAddress(deliveryAddress);
+    public int saveDeliveryAddress(DeliveryAddressBo dABo) {
+        return deliveryAddressService.saveDeliveryAddress(dABo);
     }
 
     @RequestMapping("/updateDeliveryAddress")
-    public int updateDeliveryAddress(DeliveryAddress deliveryAddress) {
-        return deliveryAddressService.updateDeliveryAddress(deliveryAddress);
+    public int updateDeliveryAddress(DeliveryAddressBo dABo) {
+        return deliveryAddressService.updateDeliveryAddress(dABo);
     }
 
     @RequestMapping("/removeDeliveryAddress")
-    public int removeDeliveryAddress(DeliveryAddress deliveryAddress) {
-        return deliveryAddressService.removeDeliveryAddress(deliveryAddress.getDaId());
+    public int removeDeliveryAddress(DeliveryAddress dA) {
+        return deliveryAddressService.removeDeliveryAddress(dA.getDaId());
 
     }
 }
