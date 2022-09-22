@@ -20,6 +20,9 @@ public class Cart {
                 '}';
     }
 
+    public Cart() {
+    }
+
     public Cart(Integer businessId, String userId) {
         this.businessId = businessId;
         this.userId = userId;

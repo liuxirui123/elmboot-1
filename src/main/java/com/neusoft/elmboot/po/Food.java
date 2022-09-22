@@ -9,6 +9,9 @@ public class Food {
     private Integer businessId;
     private String remarks;
 
+    public Food() {
+
+    }
 
     @Override
     public String toString() {

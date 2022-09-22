@@ -11,6 +11,9 @@ public class FoodBo {
     private Integer businessId;
     private String remarks;
 
+    public FoodBo() {
+    }
+
     public FoodBo(Food f) {
         this.foodId = f.getFoodId();
         this.foodName = f.getFoodName();

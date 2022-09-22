@@ -11,6 +11,9 @@ public class Orders {
     private String orderDate;
     private Double orderTotal;
 
+    public Orders() {
+    }
+
     public Orders(String userId, Integer businessId, Integer daId, Integer orderState, String orderDate, Double orderTotal) {
         this.userId = userId;
         this.businessId = businessId;

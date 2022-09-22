@@ -11,6 +11,9 @@ public class CartBo {
 
     private BusinessBo businessBo;//多对一：所属商家
 
+    public CartBo() {
+    }
+
     public CartBo(Cart c) {
         this.cartId = c.getCartId();
         this.userId = c.getUserId();

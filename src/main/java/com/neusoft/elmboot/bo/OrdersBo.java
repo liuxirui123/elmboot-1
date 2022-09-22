@@ -15,6 +15,9 @@ public class OrdersBo {
     private DeliveryAddressBo daBo;
     private List<OrderDetailBo> odBoList;//一对多：订单明细
 
+    public OrdersBo() {
+    }
+
     public OrdersBo(Orders o) {
         this.orderId = o.getOrderId();
         this.userId = o.getUserId();

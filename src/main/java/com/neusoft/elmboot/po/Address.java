@@ -13,6 +13,9 @@ public class Address {
 
     private static final double EARTH_RADIUS = 6378.137;
 
+    public Address() {
+    }
+
     public Address(double longitudes, double latitudes) {
         this.longitudes = longitudes;
         this.latitudes = latitudes;

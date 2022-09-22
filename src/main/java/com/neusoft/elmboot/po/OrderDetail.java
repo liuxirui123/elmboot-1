@@ -7,6 +7,10 @@ public class OrderDetail {
     private Integer foodId;
     private Integer quantity;
 
+    public OrderDetail() {
+
+    }
+
     public OrderDetail(Integer orderId, Integer foodId, Integer quantity) {
         this.orderId = orderId;
         this.foodId = foodId;

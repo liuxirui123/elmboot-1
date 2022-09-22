@@ -8,6 +8,9 @@ public class OrderDetailBo {
     private Integer quantity;
     private FoodBo foodBo;
 
+    public OrderDetailBo() {
+    }
+
     public OrderDetailBo(OrderDetail od) {
         this.odId = od.getOdId();
         this.orderId = od.getOrderId();

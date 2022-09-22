@@ -11,6 +11,10 @@ public class DeliveryAddressBo {
     private String contactTel;
     private Address address;
 
+    public DeliveryAddressBo() {
+
+    }
+
     public DeliveryAddressBo(DeliveryAddress da) {
         this.daId = da.getDaId();
         this.userId = da.getUserId();
