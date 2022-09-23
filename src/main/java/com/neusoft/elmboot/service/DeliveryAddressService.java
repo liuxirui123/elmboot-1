@@ -10,7 +10,7 @@ public interface DeliveryAddressService {
 
     DeliveryAddressBo getDeliveryAddressById(Integer daId);
 
-    int saveDeliveryAddress(DeliveryAddressBo deliveryAddress);
+    int saveDeliveryAddress(DeliveryAddress deliveryAddress);
 
     int updateDeliveryAddress(DeliveryAddressBo deliveryAddress);
 

@@ -34,9 +34,9 @@ public class DeliveryAddressServiceImpl implements DeliveryAddressService {
 
     @Override
     @Transactional
-    public int saveDeliveryAddress(DeliveryAddressBo dABo) {
-        addressMapper.saveAddress(new Address(dABo.getAddress()));
-        return deliveryAddressMapper.saveDeliveryAddress(new DeliveryAddress(dABo));
+    public int saveDeliveryAddress(DeliveryAddress dA) {
+
+        return deliveryAddressMapper.saveDeliveryAddress(dA);
     }
 
     @Override
