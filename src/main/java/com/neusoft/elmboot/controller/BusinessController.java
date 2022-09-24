@@ -17,8 +17,8 @@ public class BusinessController {
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
-    public List<BusinessBo> listBusinessByOrderTypeId(Business business) {
-        return businessService.listBusinessByOrderTypeId(business.getOrderTypeId());
+    public List<BusinessBo> listBusinessByOrderTypeId(Integer orderTypeId) {
+        return businessService.listBusinessByOrderTypeId(orderTypeId);
     }
 
     @RequestMapping("/listBusiness")

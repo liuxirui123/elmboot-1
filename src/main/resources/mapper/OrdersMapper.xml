@@ -4,5 +4,10 @@
 
 <mapper namespace="com.neusoft.elmboot.mapper.OrdersMapper">
 
+    <insert id="saveOrders" useGeneratedKeys="true" keyProperty="orderId" keyColumn="orderId">
+        insert into orders
+        values (null, #{userId}, #{businessId}, #{daId}, 0, #{orderDate}, #{orderTotal})
+    </insert>
+
 
 </mapper>
