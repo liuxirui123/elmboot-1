@@ -26,6 +26,12 @@ public class OrdersController {
         return ordersService.getOrdersById(orders.getOrderId());
     }
 
+
+    @RequestMapping("/updateOrderStateById")
+    public int updateOrderStateById(Integer orderId) {
+        return ordersService.updateOrderStateById(orderId);
+    }
+
     @RequestMapping("/listOrdersByUserId")
     public List<OrdersBo> listOrdersByUserId(Orders orders) {
         return ordersService.listOrdersByUserId(orders.getUserId());

@@ -64,6 +64,10 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
+    public int updateOrderStateById(Integer orderId){
+        return ordersMapper.updateOrderStateById(orderId);
+    }
+    @Override
     public List<OrdersBo> listOrdersByUserId(String userId) {
         return PoToBo(ordersMapper.listOrdersByUserId(userId));
     }

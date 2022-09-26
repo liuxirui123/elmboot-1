@@ -10,5 +10,7 @@ public interface OrdersService {
 
     public OrdersBo getOrdersById(Integer orderId);
 
+    public int updateOrderStateById(Integer orderId);
+
     public List<OrdersBo> listOrdersByUserId(String userId);
 }
