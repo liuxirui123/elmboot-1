@@ -8,8 +8,7 @@ import com.neusoft.elmboot.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class BusinessServiceImpl implements BusinessService {
@@ -22,8 +21,12 @@ public class BusinessServiceImpl implements BusinessService {
 
     @Override
     public List<BusinessBo> listBusiness() {
-        List<Business> bList = businessMapper.listBusiness();
-        return PoToBo(bList);
+        return PoToBo(businessMapper.listBusiness());
+    }
+
+    @Override
+    public List<BusinessBo> listRandomBusiness() {
+        return listRandom5(PoToBo(businessMapper.listBusiness()));
     }
 
     @Override
@@ -52,5 +55,24 @@ public class BusinessServiceImpl implements BusinessService {
         }
         return bBoList;
     }
+
+    private List<BusinessBo> listRandom5(List<BusinessBo> list) {
+        if (list.size() < 5) {
+            return null;
+        } else if (list.size() == 5) {
+            return list;
+        }
+
+        Random r = new Random();
+        Set<BusinessBo> res = new HashSet<>();
+        while (res.size() < 5) {
+            res.add(
+                    list.get(
+                            r.nextInt(
+                                    list.size())));
+        }
+        return new ArrayList<>(res);
+    }
+
 
 }

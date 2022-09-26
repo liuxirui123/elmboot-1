@@ -26,6 +26,12 @@ public class BusinessController {
         return businessService.listBusiness();
     }
 
+    @RequestMapping("listRandomBusiness")
+    public List<BusinessBo> listRandomBusiness() {//获得随机的5个商家
+        return businessService.listRandomBusiness();
+
+    }
+
     @RequestMapping("/getBusinessById")
     public BusinessBo getBusinessById(Business business) {
         return businessService.getBusinessById(business.getBusinessId());
