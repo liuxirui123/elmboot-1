@@ -15,6 +15,18 @@ public class DeliveryAddressBo {
 
     }
 
+    @Override
+    public String toString() {
+        return "DeliveryAddressBo{" +
+                "daId=" + daId +
+                ", userId='" + userId + '\'' +
+                ", contactName='" + contactName + '\'' +
+                ", contactSex=" + contactSex +
+                ", contactTel='" + contactTel + '\'' +
+                ", address=" + address +
+                '}';
+    }
+
     public DeliveryAddressBo(DeliveryAddress da) {
         this.daId = da.getDaId();
         this.userId = da.getUserId();

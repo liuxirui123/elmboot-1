@@ -14,14 +14,18 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(String userId, Integer businessId, Integer daId, Integer orderState, String orderDate, Double orderTotal) {
+    public Orders(String userId, Integer businessId, Integer daId, Double orderTotal) {
         this.userId = userId;
         this.businessId = businessId;
         this.daId = daId;
-        this.orderState = orderState;
-        this.orderDate = orderDate;
         this.orderTotal = orderTotal;
     }
+
+    public Orders(String userId, Integer businessId, Integer daId, Double orderTotal,String orderDate) {
+        this(userId,businessId,daId,orderTotal);
+        this.orderDate=orderDate;
+    }
+
 
     public Integer getOrderId() {
         return orderId;

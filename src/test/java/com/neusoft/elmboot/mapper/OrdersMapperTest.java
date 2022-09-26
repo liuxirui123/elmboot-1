@@ -12,7 +12,7 @@ public class OrdersMapperTest {
 
     @Test
     public void testSaveOrders() {
-        Orders o = new Orders("test", 10001, 1, 1,"test", 10.0);
+        Orders o = new Orders("test", 10001,  1,10.0,"test");
         Assert.assertTrue(oM.saveOrders(o) > 0);
         sqlSession.rollback();
     }
