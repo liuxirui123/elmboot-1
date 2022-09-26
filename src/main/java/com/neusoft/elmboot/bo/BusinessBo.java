@@ -4,6 +4,8 @@ package com.neusoft.elmboot.bo;
 import com.neusoft.elmboot.po.Address;
 import com.neusoft.elmboot.po.Business;
 
+import java.util.Objects;
+
 
 public class BusinessBo {
 
@@ -37,6 +39,29 @@ public class BusinessBo {
     public BusinessBo(Business b, Address a) {
         this(b);
         this.address = a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BusinessBo that = (BusinessBo) o;
+
+        if (Double.compare(that.starPrice, starPrice) != 0) return false;
+        if (Double.compare(that.deliveryPrice, deliveryPrice) != 0) return false;
+        if (!Objects.equals(businessId, that.businessId)) return false;
+        if (!Objects.equals(businessName, that.businessName)) return false;
+        if (!Objects.equals(businessExplain, that.businessExplain))
+            return false;
+        if (!Objects.equals(businessImg, that.businessImg)) return false;
+        if (!Objects.equals(remarks, that.remarks)) return false;
+        return Objects.equals(address, that.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return businessId != null ? businessId.hashCode() : 0;
     }
 
     @Override
