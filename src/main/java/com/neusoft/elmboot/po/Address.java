@@ -1,5 +1,7 @@
 package com.neusoft.elmboot.po;
 
+import java.util.Objects;
+
 public class Address {
     private Integer addressId;
     private double longitudes;//经度
@@ -12,6 +14,24 @@ public class Address {
     }
 
     private static final double EARTH_RADIUS = 6378.137;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (Double.compare(address.longitudes, longitudes) != 0) return false;
+        if (Double.compare(address.latitudes, latitudes) != 0) return false;
+        if (!Objects.equals(addressId, address.addressId)) return false;
+        return Objects.equals(addressExplain, address.addressExplain);
+    }
+
+    @Override
+    public int hashCode() {
+        return addressId != null ? addressId.hashCode() : 0;
+    }
 
     public Address() {
     }
