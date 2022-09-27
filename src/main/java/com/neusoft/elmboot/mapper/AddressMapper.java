@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface AddressMapper {
     @Select("select * from address where addressId=#{addressId}")
@@ -16,4 +18,7 @@ public interface AddressMapper {
 
     @Update("update address set longitudes=#{longitudes}, latitudes=#{latitudes}, addressExplain=#{addressExplain} where addressId=#{addressId}")
     int updateAddress(Address address);
+
+    @Select("select * from address")
+    List<Address> listAddress();
 }
