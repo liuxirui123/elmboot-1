@@ -1,6 +1,5 @@
 package com.neusoft.elmboot.controller;
 
-import com.neusoft.elmboot.bo.BusinessBo;
 import com.neusoft.elmboot.po.Business;
 import com.neusoft.elmboot.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +16,23 @@ public class BusinessController {
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
-    public List<BusinessBo> listBusinessByOrderTypeId(Integer orderTypeId) {
+    public List<Business> listBusinessByOrderTypeId(Integer orderTypeId) {
         return businessService.listBusinessByOrderTypeId(orderTypeId);
     }
 
     @RequestMapping("/listBusiness")
-    public List<BusinessBo> listBusiness() {
+    public List<Business> listBusiness() {
         return businessService.listBusiness();
     }
 
     @RequestMapping("listRandomBusiness")
-    public List<BusinessBo> listRandomBusiness() {//获得随机的5个商家
+    public List<Business> listRandomBusiness() {//获得随机的5个商家
         return businessService.listRandomBusiness();
 
     }
 
     @RequestMapping("/getBusinessById")
-    public BusinessBo getBusinessById(Business business) {
-        return businessService.getBusinessById(business.getBusinessId());
+    public Business getBusinessById(Integer businessId) {
+        return businessService.getBusinessById(businessId);
     }
 }

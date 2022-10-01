@@ -1,12 +1,11 @@
 package com.neusoft.elmboot.service;
 
-import com.neusoft.elmboot.bo.CartBo;
 import com.neusoft.elmboot.po.Cart;
 
 import java.util.List;
 
 public interface CartService {
-    public List<CartBo> listCart(Cart cart);
+    public List<Cart> listCart(Cart cart);
 
     public int saveCart(Cart cart);
 

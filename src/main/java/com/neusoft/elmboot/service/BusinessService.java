@@ -1,16 +1,17 @@
 package com.neusoft.elmboot.service;
 
-import com.neusoft.elmboot.bo.BusinessBo;
+import com.neusoft.elmboot.po.Business;
 
 import java.util.List;
 
 public interface BusinessService {
 
-    List<BusinessBo> listBusiness();
+    List<Business> listBusiness();
 
-    List<BusinessBo> listRandomBusiness();
-    List<BusinessBo> listBusinessByOrderTypeId(Integer orderTypeId);
+    List<Business> listRandomBusiness();
 
-    BusinessBo getBusinessById(Integer businessId);
+    List<Business> listBusinessByOrderTypeId(Integer orderTypeId);
+
+    Business getBusinessById(Integer businessId);
 
 }

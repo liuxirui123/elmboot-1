@@ -1,7 +1,7 @@
 package com.neusoft.elmboot.controller;
 
 import com.neusoft.elmboot.bo.DeliveryAddressBo;
-import com.neusoft.elmboot.po.Address;
+import com.neusoft.elmboot.entity.DeliveryAddressEntity;
 import com.neusoft.elmboot.po.DeliveryAddress;
 import com.neusoft.elmboot.service.DeliveryAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +17,17 @@ public class DeliveryAddressController {
     private DeliveryAddressService deliveryAddressService;
 
     @RequestMapping("/listDeliveryAddressByUserId")
-    public List<DeliveryAddressBo> listDeliveryAddressByUserId(String userId) {
+    public List<DeliveryAddress> listDeliveryAddressByUserId(String userId) {
         return deliveryAddressService.listDeliveryAddressByUserId(userId);
     }
 
     @RequestMapping("/getDeliveryAddressById")
-    public DeliveryAddressBo getDeliveryAddressById(Integer daId) {
+    public DeliveryAddress getDeliveryAddressById(Integer daId) {
         return deliveryAddressService.getDeliveryAddressById(daId);
     }
 
     @RequestMapping("/saveDeliveryAddress")
-    public int saveDeliveryAddress(DeliveryAddress dA) {
+    public int saveDeliveryAddress(DeliveryAddressEntity dA) {
         return deliveryAddressService.saveDeliveryAddress(dA);
     }
 
@@ -37,8 +37,8 @@ public class DeliveryAddressController {
     }
 
     @RequestMapping("/removeDeliveryAddress")
-    public int removeDeliveryAddress(DeliveryAddress dA) {
-        return deliveryAddressService.removeDeliveryAddress(dA.getDaId());
+    public int removeDeliveryAddress(Integer daId) {
+        return deliveryAddressService.removeDeliveryAddress(daId);
 
     }
 }

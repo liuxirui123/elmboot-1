@@ -5,7 +5,7 @@
 <mapper namespace="com.neusoft.elmboot.mapper.CartMapper">
 
 
-    <select id="listCart" parameterType="Cart" resultType="Cart">
+    <select id="listCart" resultType="Cart">
         select * from cart
         <where>
             userId=#{userId}
@@ -25,6 +25,5 @@
             </if>
         </where>
     </delete>
-
 
 </mapper>

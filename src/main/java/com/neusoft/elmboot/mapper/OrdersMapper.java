@@ -11,7 +11,7 @@ import java.util.List;
 public interface OrdersMapper {
 
 
-    int saveOrders(Orders orders);
+    int createOrders(Orders orders);
 
     @Select("select * from orders where orderId=#{orderId}")
     Orders getOrdersById(Integer orderId);

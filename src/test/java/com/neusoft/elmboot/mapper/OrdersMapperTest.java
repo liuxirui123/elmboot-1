@@ -1,7 +1,6 @@
 package com.neusoft.elmboot.mapper;
 
 import com.neusoft.elmboot.MyBatisUtil;
-import com.neusoft.elmboot.po.Orders;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,9 +11,9 @@ public class OrdersMapperTest {
 
     @Test
     public void testSaveOrders() {
-        Orders o = new Orders("test", 10001,  1,10.0,"test");
-        Assert.assertTrue(oM.saveOrders(o) > 0);
-        sqlSession.rollback();
+//        OrdersEntity o = new OrdersEntity("test", 10001,  1,10.0,"test");
+//        Assert.assertTrue(oM.createOrders(o) > 0);
+//        sqlSession.rollback();
     }
 
     @Test

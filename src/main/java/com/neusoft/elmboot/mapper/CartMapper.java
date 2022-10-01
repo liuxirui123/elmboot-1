@@ -1,14 +1,17 @@
 package com.neusoft.elmboot.mapper;
 
+
 import com.neusoft.elmboot.po.Cart;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
 @Mapper
 public interface CartMapper {
 
-    List<Cart> listCart(Cart cart);
+    List<Cart> listCart(Cart c);//一个用户一个商家的cart
 
     @Insert("insert into cart values(null,#{foodId},#{businessId},#{userId},1)")
     int saveCart(Cart cart);

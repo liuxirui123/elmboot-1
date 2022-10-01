@@ -1,6 +1,5 @@
 package com.neusoft.elmboot.controller;
 
-import com.neusoft.elmboot.bo.OrdersBo;
 import com.neusoft.elmboot.po.Orders;
 import com.neusoft.elmboot.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class OrdersController {
     }
 
     @RequestMapping("/getOrdersById")
-    public OrdersBo getOrdersById(Orders orders) {
-        return ordersService.getOrdersById(orders.getOrderId());
+    public Orders getOrdersById(Integer orderId) {
+        return ordersService.getOrdersById(orderId);
     }
 
 
@@ -33,7 +32,7 @@ public class OrdersController {
     }
 
     @RequestMapping("/listOrdersByUserId")
-    public List<OrdersBo> listOrdersByUserId(Orders orders) {
-        return ordersService.listOrdersByUserId(orders.getUserId());
+    public List<Orders> listOrdersByUserId(String userId) {
+        return ordersService.listOrdersByUserId(userId);
     }
 }

@@ -3,7 +3,7 @@ package com.neusoft.elmboot.service;
 
 import com.neusoft.elmboot.ElmBootApplication;
 import com.neusoft.elmboot.TestUtil;
-import com.neusoft.elmboot.bo.BusinessBo;
+import com.neusoft.elmboot.po.Business;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -51,9 +51,9 @@ public class BusinessServiceTest {
     @Test
     public void testListRandomBusiness() {
         for (int i = 0; i < 10; i++) {
-            Set<BusinessBo> bBoSet = new HashSet<>(bS.listRandomBusiness());
-            Assert.assertEquals(5, bBoSet.size());
-            System.out.println(bBoSet);
+            Set<Business> bSet = new HashSet<>(bS.listRandomBusiness());
+            Assert.assertEquals(5, bSet.size());
+            System.out.println(bSet);
         }
     }
 

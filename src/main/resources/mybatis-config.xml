@@ -16,10 +16,10 @@
         <typeAlias alias="ArrayList" type="java.util.ArrayList"/>
         <typeAlias alias="LinkedList" type="java.util.LinkedList"/>
 
-        <typeAlias alias="Business" type="com.neusoft.elmboot.po.Business"/>
-        <typeAlias alias="User" type="com.neusoft.elmboot.po.User"/>
+        <typeAlias alias="Business" type="com.neusoft.elmboot.entity.BusinessEntity"/>
+        <typeAlias alias="User" type="com.neusoft.elmboot.entity.UserEntity"/>
 
-        <package name="com.neusoft.elmboot.po"/>
+        <package name="com.neusoft.elmboot.entity"/>
 
     </typeAliases>
 

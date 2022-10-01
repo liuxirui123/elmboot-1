@@ -25,8 +25,8 @@ public class FoodMapperTest {
     public void testGetFOodById() {
         int[] foodIds = {-1, 0, 1, 2, 3, 4, 5};
         boolean[] ifNulls = {true, true, false, false, false, false, false};
-        for(int i=0;i<ifNulls.length;i++){
-            TestUtil.testGetSingle(fM.getFoodById(foodIds[i]),ifNulls[i]);
+        for (int i = 0; i < ifNulls.length; i++) {
+            TestUtil.testGetSingle(fM.getFoodById(foodIds[i]), ifNulls[i]);
         }
 
     }

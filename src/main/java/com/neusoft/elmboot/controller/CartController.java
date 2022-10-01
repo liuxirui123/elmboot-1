@@ -1,6 +1,5 @@
 package com.neusoft.elmboot.controller;
 
-import com.neusoft.elmboot.bo.CartBo;
 import com.neusoft.elmboot.po.Cart;
 import com.neusoft.elmboot.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ public class CartController {
     private CartService cartService;
 
     @RequestMapping("/listCart")
-    public List<CartBo> listCart(Cart cart) {
+    public List<Cart> listCart(Cart cart) {
         return cartService.listCart(cart);
     }
 

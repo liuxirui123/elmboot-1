@@ -8,7 +8,7 @@ public class FoodServiceTest {
     FoodService fS;
 
     @Test
-    public void testListFoodByBusinessId(){
+    public void testListFoodByBusinessId() {
 
     }
 }

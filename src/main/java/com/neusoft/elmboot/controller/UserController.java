@@ -1,5 +1,6 @@
 package com.neusoft.elmboot.controller;
 
+import com.neusoft.elmboot.entity.UserEntity;
 import com.neusoft.elmboot.po.User;
 import com.neusoft.elmboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,12 @@ public class UserController {
     }
 
     @RequestMapping("/getUserById")
-    public int getUserById(User user) {
-        return userService.getUserById(user.getUserId());
+    public int getUserById(String userId) {
+        return userService.getUserById(userId);
     }
 
     @RequestMapping("/saveUser")
-    public int saveUser(User user) {
+    public int saveUser(UserEntity user) {
         return userService.saveUser(user);
     }
 }
