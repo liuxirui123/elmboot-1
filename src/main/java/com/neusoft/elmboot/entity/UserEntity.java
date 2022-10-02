@@ -5,5 +5,5 @@ import com.neusoft.elmboot.po.User;
 public class UserEntity extends User {
 
     private String userId;
-
+    private String password;
 }

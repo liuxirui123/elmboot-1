@@ -6,5 +6,4 @@ public class OrdersEntity extends Orders {
 
     private Integer orderId;
 
-
 }
