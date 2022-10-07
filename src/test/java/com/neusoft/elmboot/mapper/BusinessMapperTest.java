@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
+import static com.neusoft.elmboot.TestCases.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
@@ -19,24 +21,20 @@ public class BusinessMapperTest {
 
     @Test
     public void testGetBusinessById() {
-        int[] bIds = {10001, 10002, 10003};
-        int[] bIdsNot = {0, -2, 90};
-        for (int id : bIds) {
+        for (int id : businessIds) {
             TestUtil.testGetSingle(bM.getBusinessById(id), false);
         }
-        for (int id : bIdsNot) {
+        for (int id : businessIdsNOt) {
             TestUtil.testGetSingle(bM.getBusinessById(id), true);
         }
     }
 
     @Test
     public void testListBusinessByOrderTypeId() {
-        int[] oIds = {1, 4, 5};
-        int[] oIdsNot = {-1, -2, 10123};
-        for (int id : oIds) {
+        for (int id : businessOrderTypeIds) {
             TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), false);
         }
-        for (int id : oIdsNot) {
+        for (int id : businessOrderTypeIdsNot) {
             TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), true);
         }
     }
