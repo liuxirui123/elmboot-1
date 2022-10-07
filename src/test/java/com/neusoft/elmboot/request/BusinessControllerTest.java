@@ -1,6 +1,7 @@
-package com.neusoft.elmboot.controller;
+package com.neusoft.elmboot.request;
 
 
+import com.neusoft.elmboot.controller.BusinessController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
+import static com.neusoft.elmboot.TestCases.businessOrderTypeIds;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -19,6 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class BusinessControllerTest {
     @Autowired
     BusinessController businessController;
@@ -33,17 +37,17 @@ public class BusinessControllerTest {
 
     @Test
     public void testListBusinessByOrderTypeId() throws Exception {
-        int[] orderTypeIds = {1, 4, 10000};
+        RequestBuilder requestBuilder;
 
-        RequestBuilder requestBuilder = null;
+        for (int id : businessOrderTypeIds) {
+            requestBuilder = post("/BusinessController/listBusinessByOrderTypeId").param("orderTypeId", String.valueOf(id));
 
-        requestBuilder = post("/BusinessController/listBusinessByOrderTypeId").param("orderTypeId", "1");
-
-        //执行请求
-        mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())//返回HTTP状态为200
-                .andDo(print());//打印结果
-        //.andReturn();//想要返回结果，使用此方法
+            //执行请求
+            mockMvc.perform(requestBuilder)
+                    .andExpect(status().isOk())//返回HTTP状态为200
+                    .andDo(print());//打印结果
+            //.andReturn();//想要返回结果，使用此方法
+        }
 
     }
 }
