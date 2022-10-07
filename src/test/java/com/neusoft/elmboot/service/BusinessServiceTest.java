@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.neusoft.elmboot.TestUtil.testGetSingle;
+import static com.neusoft.elmboot.TestCases.*;
 
 @SpringBootTest(classes = ElmBootApplication.class)
 @RunWith(SpringRunner.class)
@@ -25,7 +25,6 @@ public class BusinessServiceTest {
     @Autowired
     private BusinessService bS;
 
-
     @Test
     public void testListBusiness() {
         TestUtil.testGetList(new ArrayList<>(bS.listBusiness()), false);
@@ -33,19 +32,23 @@ public class BusinessServiceTest {
 
     @Test
     public void testListBusinessByOrderTypeId() {
-        int[] orderTypeIds = {1, 4, 0};
-        boolean[] ifNulls = {false, false, true};
-        for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testGetList(new ArrayList<>(bS.listBusinessByOrderTypeId(orderTypeIds[i])), ifNulls[i]);
+        for (int id : businessOrderTypeIds) {
+            TestUtil.testGetList(new ArrayList<>(bS.listBusinessByOrderTypeId(id)), false);
+        }
+        for (int id : businessOrderTypeIdsNot) {
+            TestUtil.testGetList(new ArrayList<>(bS.listBusinessByOrderTypeId(id)), true);
         }
     }
 
 
     @Test
     public void testGetBusinessById() {
-        testGetSingle(bS.getBusinessById(10001), false);
-
-        testGetSingle(bS.getBusinessById(0), true);
+        for (int id : businessIds) {
+            TestUtil.testGetSingle(bS.getBusinessById(id), false);
+        }
+        for (int id : businessIdsNOt) {
+            TestUtil.testGetSingle(bS.getBusinessById(id), true);
+        }
     }
 
     @Test

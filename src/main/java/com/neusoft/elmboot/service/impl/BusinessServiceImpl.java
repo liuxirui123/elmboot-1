@@ -1,43 +1,45 @@
 package com.neusoft.elmboot.service.impl;
 
 
+import com.neusoft.elmboot.bo.BusinessBo;
 import com.neusoft.elmboot.mapper.BusinessMapper;
-import com.neusoft.elmboot.po.Business;
 import com.neusoft.elmboot.service.BusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+import static com.neusoft.elmboot.util.ModelConverterUtils.convert;
+
 @Service
 public class BusinessServiceImpl implements BusinessService {
 
     @Autowired
-    private BusinessMapper businessMapper;
+    private BusinessMapper bM;
 
 
     @Override
-    public List<Business> listBusiness() {
-        return businessMapper.listBusiness();
+    public List<BusinessBo> listBusiness() {
+        return convert(bM.listBusiness(), BusinessBo.class);
     }
 
     @Override
-    public List<Business> listRandomBusiness() {
-        return listRandom5(businessMapper.listBusiness());
+    public List<BusinessBo> listRandomBusiness() {
+        return listRandom5(convert(listBusiness(), BusinessBo.class));
     }
 
     @Override
-    public List<Business> listBusinessByOrderTypeId(Integer orderTypeId) {
-        return businessMapper.listBusinessByOrderTypeId(orderTypeId);
+    public List<BusinessBo> listBusinessByOrderTypeId(Integer orderTypeId) {
+        return convert(bM.listBusinessByOrderTypeId(orderTypeId), BusinessBo.class);
     }
 
     @Override
-    public Business getBusinessById(Integer businessId) {
-        return businessMapper.getBusinessById(businessId);
+    public BusinessBo getBusinessById(Integer businessId) {
+        return convert(bM.getBusinessById(businessId), BusinessBo.class);
     }
 
 
-    private List<Business> listRandom5(List<Business> list) {
+    private List<BusinessBo> listRandom5(List<BusinessBo> list) {//从一个list中随机获取5个
         if (list.size() < 5) {
             return null;
         } else if (list.size() == 5) {
@@ -45,7 +47,7 @@ public class BusinessServiceImpl implements BusinessService {
         }
 
         Random r = new Random();
-        Set<Business> res = new HashSet<>();
+        Set<BusinessBo> res = new HashSet<>();
         while (res.size() < 5) {
             res.add(
                     list.get(
