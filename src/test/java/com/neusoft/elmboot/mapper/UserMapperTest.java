@@ -1,11 +1,17 @@
 package com.neusoft.elmboot.mapper;
 
-import com.neusoft.elmboot.MyBatisUtil;
-import org.apache.ibatis.session.SqlSession;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Transactional
 public class UserMapperTest {
-    SqlSession sqlSession = MyBatisUtil.getSqlSession();
-    UserMapper uM = sqlSession.getMapper(UserMapper.class);
+    @Autowired
+    private UserMapper uM;
 
 //    @Test
 //    public void testGetUserByIdByPass() {

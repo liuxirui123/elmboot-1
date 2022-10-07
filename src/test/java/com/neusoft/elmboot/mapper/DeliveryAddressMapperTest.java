@@ -1,16 +1,21 @@
 package com.neusoft.elmboot.mapper;
 
-import com.neusoft.elmboot.MyBatisUtil;
 import com.neusoft.elmboot.po.DeliveryAddress;
-import org.apache.ibatis.session.SqlSession;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Transactional
 public class DeliveryAddressMapperTest {
-    private static SqlSession sqlSession = MyBatisUtil.getSqlSession();
-    private static DeliveryAddressMapper dAM = sqlSession.getMapper(DeliveryAddressMapper.class);
+    @Autowired
+    private DeliveryAddressMapper dAM ;
 
 
     @Test
@@ -54,12 +59,10 @@ public class DeliveryAddressMapperTest {
     public void testRemoveDeliveryAddress() {
         int result = dAM.removeDeliveryAddress(1);
         Assert.assertEquals(1, result);
-        sqlSession.rollback();
 
         result = dAM.removeDeliveryAddress(0);
         System.out.println(result);
         Assert.assertTrue(result <= 0);
-        sqlSession.rollback();
 
     }
 }
