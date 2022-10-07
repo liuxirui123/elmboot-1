@@ -1,12 +1,14 @@
 package com.neusoft.elmboot.controller;
 
-import com.neusoft.elmboot.po.Business;
 import com.neusoft.elmboot.service.BusinessService;
+import com.neusoft.elmboot.vo.BusinessVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static com.neusoft.elmboot.util.ModelConverterUtils.convert;
 
 @RestController
 @RequestMapping("/BusinessController")
@@ -16,23 +18,22 @@ public class BusinessController {
     private BusinessService businessService;
 
     @RequestMapping("/listBusinessByOrderTypeId")
-    public List<Business> listBusinessByOrderTypeId(Integer orderTypeId) {
-        return businessService.listBusinessByOrderTypeId(orderTypeId);
+    public List<BusinessVo> listBusinessByOrderTypeId(Integer orderTypeId) {
+        return convert(businessService.listBusinessByOrderTypeId(orderTypeId), BusinessVo.class);
     }
 
     @RequestMapping("/listBusiness")
-    public List<Business> listBusiness() {
-        return businessService.listBusiness();
+    public List<BusinessVo> listBusiness() {
+        return convert(businessService.listBusiness(), BusinessVo.class);
     }
 
     @RequestMapping("listRandomBusiness")
-    public List<Business> listRandomBusiness() {//获得随机的5个商家
-        return businessService.listRandomBusiness();
-
+    public List<BusinessVo> listRandomBusiness() {//获得随机的5个商家
+        return convert(businessService.listRandomBusiness(), BusinessVo.class);
     }
 
     @RequestMapping("/getBusinessById")
-    public Business getBusinessById(Integer businessId) {
-        return businessService.getBusinessById(businessId);
+    public BusinessVo getBusinessById(Integer businessId) {
+        return convert(businessService.getBusinessById(businessId), BusinessVo.class);
     }
 }
