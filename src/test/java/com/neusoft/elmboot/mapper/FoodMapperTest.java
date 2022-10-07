@@ -9,31 +9,34 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+
+import static com.neusoft.elmboot.TestCases.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
 public class FoodMapperTest {
-   @Autowired
-    FoodMapper fM ;
+    @Autowired
+    FoodMapper fM;
 
     @Test
     public void testListFoodByBusinessId() {
-        int[] businessIds = {-1, 1, 10001, 10002, 10000000};
-        boolean[] ifNulls = {true, true, false, false, true};
-        for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testGetList(new ArrayList<>(fM.listFoodByBusinessId(businessIds[i])), ifNulls[i]);
+        for (int id : businessIds) {
+            TestUtil.testGetList(new ArrayList<>(fM.listFoodByBusinessId(id)), false);
         }
-
+        for (int id : businessIdsNOt) {
+            TestUtil.testGetList(new ArrayList<>(fM.listFoodByBusinessId(id)), true);
+        }
     }
 
     @Test
     public void testGetFOodById() {
-        int[] foodIds = {-1, 0, 1, 2, 3, 4, 5};
-        boolean[] ifNulls = {true, true, false, false, false, false, false};
-        for (int i = 0; i < ifNulls.length; i++) {
-            TestUtil.testGetSingle(fM.getFoodById(foodIds[i]), ifNulls[i]);
+        for (int id : foodIds) {
+            TestUtil.testGetSingle(fM.getFoodById(id), false);
         }
-
+        for (int id : foodIdsNot) {
+            TestUtil.testGetSingle(fM.getFoodById(id), true);
+        }
     }
 
 }
