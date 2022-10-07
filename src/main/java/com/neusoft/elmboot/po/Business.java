@@ -1,6 +1,14 @@
 package com.neusoft.elmboot.po;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter//自动加getter方法
+@Setter//自动加setter方法
+@AllArgsConstructor//所有字段的构造函数
+@NoArgsConstructor//无参构造
 public abstract class Business {
 
     protected String businessName;
@@ -11,6 +19,7 @@ public abstract class Business {
     protected double starPrice; //起送费
     protected double deliveryPrice; //配送费
     protected String remarks;
+
 
     @Override
     public String toString() {
@@ -25,4 +34,5 @@ public abstract class Business {
                 ", remarks='" + remarks + '\'' +
                 '}';
     }
+
 }
