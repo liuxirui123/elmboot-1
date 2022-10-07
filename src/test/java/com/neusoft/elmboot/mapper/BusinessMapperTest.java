@@ -1,51 +1,49 @@
 package com.neusoft.elmboot.mapper;
 
-import com.neusoft.elmboot.MyBatisUtil;
-import com.neusoft.elmboot.po.Business;
-import org.apache.ibatis.session.SqlSession;
-import org.junit.Assert;
+import com.neusoft.elmboot.TestUtil;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Transactional
 public class BusinessMapperTest {
-    SqlSession sqlSession = MyBatisUtil.getSqlSession();
-    BusinessMapper bM = sqlSession.getMapper(BusinessMapper.class);
+    @Autowired
+    BusinessMapper bM;
 
     @Test
     public void testGetBusinessById() {
         int[] bIds = {10001, 10002, 10003};
         int[] bIdsNot = {0, -2, 90};
-        Business b;
-        for (int bId : bIds) {
-            b = bM.getBusinessById(bId);
-            System.out.println(b);
-            Assert.assertNotNull(b);
+        for (int id : bIds) {
+            TestUtil.testGetSingle(bM.getBusinessById(id), false);
         }
-        for (int bIdNot : bIdsNot) {
-            b = bM.getBusinessById(bIdNot);
-            System.out.println(b);
-            Assert.assertNull(b);
+        for (int id : bIdsNot) {
+            TestUtil.testGetSingle(bM.getBusinessById(id), true);
         }
     }
 
     @Test
     public void testListBusinessByOrderTypeId() {
-        List<Business> bList;
-        bList = bM.listBusinessByOrderTypeId(1);
-        System.out.println(String.valueOf(bList.size()) + bList);
-        Assert.assertTrue(bList.size() > 0);
-
-        bList = bM.listBusinessByOrderTypeId(0);
-        System.out.println(String.valueOf(bList.size()) + bList);
-        Assert.assertEquals(0, bList.size());
+        int[] oIds = {1, 4, 5};
+        int[] oIdsNot = {-1, -2, 10123};
+        for (int id : oIds) {
+            TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), false);
+        }
+        for (int id : oIdsNot) {
+            TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), true);
+        }
     }
 
     @Test
     public void testListBusiness() {
-        List<Business> bList = bM.listBusiness();
-        System.out.println(String.valueOf(bList.size()) + bList);
-        Assert.assertTrue(bList.size() > 0);
+        TestUtil.testGetList(new ArrayList<>(bM.listBusiness()), false);
 
     }
 }

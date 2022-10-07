@@ -18,6 +18,7 @@
 
         <typeAlias alias="Business" type="com.neusoft.elmboot.entity.BusinessEntity"/>
         <typeAlias alias="User" type="com.neusoft.elmboot.entity.UserEntity"/>
+        <typeAlias alias="Cart" type="com.neusoft.elmboot.entity.CartEntity"/>
 
         <package name="com.neusoft.elmboot.entity"/>
 

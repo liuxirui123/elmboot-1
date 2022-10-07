@@ -1,7 +1,7 @@
 package com.neusoft.elmboot.mapper;
 
 
-import com.neusoft.elmboot.po.Business;
+import com.neusoft.elmboot.entity.BusinessEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,11 +11,11 @@ import java.util.List;
 public interface BusinessMapper {
 
     @Select("select * from business order by businessId")
-    List<Business> listBusiness();
+    List<BusinessEntity> listBusiness();
 
     @Select("select * from business where orderTypeId=#{orderTypeId} order by businessId")
-    List<Business> listBusinessByOrderTypeId(Integer orderTypeId);
+    List<BusinessEntity> listBusinessByOrderTypeId(Integer orderTypeId);
 
     @Select("select * from business where businessId=#{businessId}")
-    Business getBusinessById(Integer businessId);
+    BusinessEntity getBusinessById(Integer businessId);
 }
