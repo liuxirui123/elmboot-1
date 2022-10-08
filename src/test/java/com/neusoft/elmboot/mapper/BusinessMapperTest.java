@@ -32,10 +32,10 @@ public class BusinessMapperTest {
     @Test
     public void testListBusinessByOrderTypeId() {
         for (int id : businessOrderTypeIds) {
-            TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), false);
+            TestUtil.testGetList(bM.listBusinessByOrderTypeId(id), false);
         }
         for (int id : businessOrderTypeIdsNot) {
-            TestUtil.testGetList(new ArrayList<>(bM.listBusinessByOrderTypeId(id)), true);
+            TestUtil.testGetList(bM.listBusinessByOrderTypeId(id), true);
         }
     }
 
