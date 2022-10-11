@@ -6,4 +6,5 @@ public abstract class OrderDetail {
     private Integer foodId;
     private Integer quantity;
 
+    private Food food;
 }

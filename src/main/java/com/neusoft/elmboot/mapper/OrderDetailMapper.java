@@ -10,9 +10,7 @@ import java.util.List;
 @Mapper
 public interface OrderDetailMapper {
 
-    @Insert("insert into orderDetail values(null,#{orderId},#{foodId},#{quantity})")
     int saveOrderDetail(OrderDetail od);
 
-    @Select(" select * from orderDetail where orderId=#{orderId}")
     List<OrderDetail> listOrderDetailByOrderId(Integer orderOd);
 }

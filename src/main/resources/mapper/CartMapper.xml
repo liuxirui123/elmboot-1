@@ -4,8 +4,21 @@
 
 <mapper namespace="com.neusoft.elmboot.mapper.CartMapper">
 
+    <resultMap type="Cart" id="cartResultMap">
+        <id column="cartId" property="cartId"/>
+        <result column="foodId" property="foodId"/>
+        <result column="businessId" property="businessId"/>
+        <result column="userId" property="userId"/>
+        <result column="quantity" property="quantity"/>
+        <association property="food" javaType="Food"
+                     select="com.neusoft.elmboot.mapper.FoodMapper.getFoodById" column="foodId"/>
+        <association property="business" javaType="Business"
+                     select="com.neusoft.elmboot.mapper.BusinessMapper.getBusinessById"
+                     column="businessId"/>
 
-    <select id="listCart" resultType="Cart">
+    </resultMap>
+
+    <select id="listCart" parameterType="Cart" resultMap="cartResultMap">
         select * from cart
         <where>
             userId=#{userId}

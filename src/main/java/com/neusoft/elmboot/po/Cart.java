@@ -8,5 +8,6 @@ public abstract class Cart {
     protected String userId;
     private Integer quantity;
 
-
+    private Food food;
+    private Business Business;
 }

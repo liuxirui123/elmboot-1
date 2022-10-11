@@ -21,6 +21,8 @@ public abstract class Business {
     protected String remarks;
 
 
+
+
     @Override
     public String toString() {
         return "Business{" +

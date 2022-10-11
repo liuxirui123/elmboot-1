@@ -1,5 +1,7 @@
 package com.neusoft.elmboot.po;
 
+import java.util.List;
+
 public abstract class Orders {
 
     private String userId;
@@ -9,5 +11,8 @@ public abstract class Orders {
 
     private String orderDate;
     private Double orderTotal;
+
+    private Business business;
+    private List<OrderDetail> oDList;
 
 }
